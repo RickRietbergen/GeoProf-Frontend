@@ -1,0 +1,218 @@
+.progress-container {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0; /* Default background color */
+  transition: width 0.5s ease;
+}
+
+.background {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-color: #f7f7f7;
+}
+
+.sidenav {
+  overflow: hidden;
+  width: 15%;
+  height: 100%;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.componentsBlock {
+  border-top-left-radius: 63px;
+  border-bottom-left-radius: 63px;
+  height: 100%;
+  width: 85%;
+  background-color: #ffffff;
+  box-shadow: #dcdcdc 0px 2px 20px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  display: flex;
+}
+.logo {
+  padding-top: 13%;
+  padding-bottom: 8%;
+  width: 77%;
+}
+
+.profilePicture {
+  width: 20%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.infoBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 21%;
+}
+.name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.function {
+  font-size: 12px;
+  color: #ababab;
+}
+
+.categoryBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 73%;
+  padding-left: 28%;
+  height: 71%;
+  font-size: 20px;
+}
+
+.active {
+  border-right: 5px solid #ffb906;
+  display: flex;
+  gap: 15px;
+}
+.lowerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  padding-bottom: 15%;
+}
+.logOut {
+  text-decoration: none;
+  color: black;
+}
+.home {
+  color: #ffb906;
+}
+.nav_icons {
+  display: flex;
+  gap: 15px;
+  color: #c5c5c8;
+}
+.left {
+  width: 68%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.right {
+  width: 32%;
+  height: 100%;
+  background-color: blue;
+}
+.Block {
+  height: 100%;
+  width: 100%;
+}
+.BlockAbove {
+  height: 57%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.BlockDown {
+  height: 43%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.Blocks {
+  width: 86%;
+  height: 21rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+.verlofComponent {
+  width: 80%;
+  height: 25rem;
+  background-color: white;
+  border-radius: 35px;
+  padding: 3%;
+  border: 3px solid #f3f3f3;
+}
+.titleBlockNew {
+  color: #ffb906;
+  font-size: 20px;
+}
+.titleBlockRequest {
+  font-size: 25px;
+}
+.inputBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 0;
+  font-size: 1rem;
+  color: #a8a8a8;
+}
+input {
+  border: 1px solid #a8a8a8;
+}
+.textfield {
+  padding: 0;
+  min-height: 9rem;
+  width: 100%;
+}
+.sendBlock {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.sendButton {
+  width: 20%;
+}
+.center {
+  text-align: center;
+  color: #ffb906;
+}
+button {
+  margin-top: 4%;
+  color: white;
+  background-color: #ffb906;
+  outline: none;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.middle {
+  border: 1px solid #ffb906;
+}
+.inputItem {
+  gap: 8px;
+  display: grid;
+}
+/* ///////////////////////////////////////// */
+.daysOffComponent {
+  border-radius: 35px;
+  height: 100%;
+  width: 46%;
+  border: 3px solid #f3f3f3;
+}
+/* ///////////////////////////////////////// */
+.statusComponent {
+  border-radius: 35px;
+  width: 46%;
+  height: 100%;
+  border: 3px solid #f3f3f3;
+}
