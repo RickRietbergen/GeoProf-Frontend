@@ -86,13 +86,13 @@ function Dashboard() {
                   </div>
                 </div>
                 <div className="colleagueDayOffBlock_right">
-                  <div>
+                  <div className="align-center">
                     <div className="beginMonth">DEC</div>
                     <div className="day">16</div>
                     <div className="endMonth">TUE</div>
                   </div>
                   <img className="arrow" src={arrow}></img>
-                  <div>
+                  <div className="align-center">
                     <div className="beginMonth">DEC</div>
                     <div className="day">30</div>
                     <div className="endMonth">DEC</div>
