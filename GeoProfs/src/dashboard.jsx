@@ -39,7 +39,7 @@ function Dashboard() {
             </a>
           </div>
           <div>
-            <a className="logOut nav_icons" href="">
+            <a className="logOut nav_icons" href="/">
               <FontAwesomeIcon icon={faRightFromBracket} />
               Log out
             </a>
