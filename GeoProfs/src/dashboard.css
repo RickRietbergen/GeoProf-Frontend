@@ -94,6 +94,7 @@
   width: 20%;
   object-fit: cover;
   border-radius: 100%;
+  padding-bottom: 3%;
 }
 .infoBlock {
   width: 100%;
@@ -180,7 +181,18 @@
   display: flex;
   justify-content: space-between;
 }
+.selectBox {
+  font-size: 1em;
+  outline: none;
+  border-radius: 5px;
+  width: 18%;
+  border: none;
+}
 
+.request_option {
+  color: black;
+  font-weight: bold;
+}
 /* /////////////////////////////////////////////////////////////// */
 .verlofComponent {
   width: 80%;
@@ -239,10 +251,17 @@ input {
 }
 .middle {
   border: 1px solid #ffb906;
+  height: 2rem;
+  padding: 3%;
+  font-size: 1em;
+  border-radius: 5px;
 }
 .inputItem {
   gap: 8px;
   display: grid;
+}
+.color {
+  color: #ffb906;
 }
 /* ///////////////////////////////////////// */
 .daysOffComponent {
@@ -405,8 +424,80 @@ input {
 }
 
 .colleaguesDaysOffBlock {
-  width: 80%;
+  width: 100%;
   height: 53.5rem;
   border-radius: 35px;
-  border: 3px solid #f3f3f3;
+  /* border: 3px solid #f3f3f3; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.colleaguesDaysOffBlock_top {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 18px;
+}
+.colleaguesDaysOffBlock_block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.colleagueDayOffBlock {
+  width: 80%;
+  height: 5rem;
+  padding: 0 2%;
+  border-left: 6px solid #ffb906;
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 0;
+}
+.colleagueDayOffBlock_left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.colleagueDayOffBlock_right {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.colleague_name {
+  font-size: 14px;
+  font-weight: bold;
+}
+.logo_colleague {
+  width: 33%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.colleague_function {
+  font-size: 12px;
+  color: #8a8d90;
+}
+
+.endMonth {
+  color: #aeaeae;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.beginMonth {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.day {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.arrow {
+  width: 30%;
 }

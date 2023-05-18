@@ -3,6 +3,9 @@ import profilePicture from "../src/assets/profile.jpg";
 import logo from "../src/assets/logoGeoProf.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Status from "./assets/components/Widgets/statusComponent";
+import VerlofComponent from "./assets/components/Widgets/request";
+import DaysOff from "../src/assets/components/Widgets/daysOff";
+import arrow from "../src/assets/arrow.png";
 import {
   faHouse,
   faSignal,
@@ -10,11 +13,15 @@ import {
   faRightFromBracket,
   faCalendarDays,
   faChevronRight,
+  faUsers,
 } from "@fortawesome/free-solid-svg-icons";
+<<<<<<< Updated upstream
 import VerlofComponent from "./assets/components/Widgets/request";
 import DaysOff from "../src/assets/components/Widgets/daysOff";
 import LogoutPage from "./assets/components/Logout/LogoutPage";
 
+=======
+>>>>>>> Stashed changes
 function Dashboard() {
   return (
     <div className="background">
@@ -63,7 +70,43 @@ function Dashboard() {
           </div>
         </div>
         <div className="right">
-          <div className="colleaguesDaysOffBlock"></div>
+          <div className="colleaguesDaysOffBlock">
+            <div className="colleaguesDaysOffBlock_top">
+              <div className="title">
+                <FontAwesomeIcon icon={faUsers} />
+                <p>Colleagues Days Off </p>
+              </div>
+              <button className="seeAll">
+                <p>See all</p>
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </div>
+            <div className="line"></div>
+            <div className="colleaguesDaysOffBlock_block">
+              <div className="colleagueDayOffBlock">
+                <div className="colleagueDayOffBlock_left">
+                  <img className="logo_colleague" src={profilePicture} alt="" />
+                  <div>
+                    <p className="colleague_name">Rick Rietbergen</p>
+                    <p className="colleague_function">Development</p>
+                  </div>
+                </div>
+                <div className="colleagueDayOffBlock_right">
+                  <div>
+                    <div className="beginMonth">DEC</div>
+                    <div className="day">16</div>
+                    <div className="endMonth">TUE</div>
+                  </div>
+                  <img className="arrow" src={arrow}></img>
+                  <div>
+                    <div className="beginMonth">DEC</div>
+                    <div className="day">30</div>
+                    <div className="endMonth">DEC</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

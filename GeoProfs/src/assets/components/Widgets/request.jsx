@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const VerlofComponent = () => {
+  const [selectedDate, setSelectedDate] = useState("");
+
+  const handleDateChange = (event) => {
+    const selectedDate = event.target.value;
+    setSelectedDate(selectedDate);
+  };
+
+  const minDate = new Date();
+  minDate.setDate(minDate.getDate() + 1);
+
   return (
     <div className="verlofComponent">
       <div className="titleBlock">
@@ -9,16 +19,33 @@ const VerlofComponent = () => {
       </div>
       <div className="inputBlock">
         <div className="inputItem">
-          <p>Start Date</p>
-          <input type="text" placeholder="17-5-2023" />
+          <p className="request_option">Start Date</p>
+          <input
+            type="date"
+            min={minDate.toISOString().split("T")[0]}
+            value={selectedDate}
+            onChange={handleDateChange}
+          />
         </div>
-        <div className="center inputItem">
-          <p>Reason</p>
-          <input className="middle" type="text" placeholder="reason" />
+        <div className="center inputItem selectBox">
+          <p className="request_option color">Reason</p>
+          <select className="middle" defaultValue="">
+            <option value="" disabled hidden>
+              Select a reason
+            </option>
+            <option value="sick">Sick</option>
+            <option value="personal">Personal</option>
+            <option value="vacation">Vacation</option>
+          </select>
         </div>
         <div className="inputItem">
-          <p>End Date</p>
-          <input type="text" placeholder="17-6-2023" />
+          <p className="request_option">End Date</p>
+          <input
+            type="date"
+            min={minDate.toISOString().split("T")[0]}
+            value={selectedDate}
+            onChange={handleDateChange}
+          />
         </div>
       </div>
       <textarea
@@ -27,7 +54,7 @@ const VerlofComponent = () => {
         name="w3review"
         rows="4"
         cols="50"
-        placeholder="  Type your reason for your leave request here"
+        placeholder="Type your reason for your leave request here"
       ></textarea>
       <div className="sendBlock">
         <button className="sendButton button">Send</button>
