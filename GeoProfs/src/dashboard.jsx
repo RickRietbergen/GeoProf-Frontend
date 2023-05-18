@@ -15,13 +15,7 @@ import {
   faChevronRight,
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
-<<<<<<< Updated upstream
-import VerlofComponent from "./assets/components/Widgets/request";
-import DaysOff from "../src/assets/components/Widgets/daysOff";
-import LogoutPage from "./assets/components/Logout/LogoutPage";
 
-=======
->>>>>>> Stashed changes
 function Dashboard() {
   return (
     <div className="background">
