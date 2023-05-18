@@ -22,7 +22,7 @@ function App() {
               <input placeholder="Username" type="text" />
               <input placeholder="Password" type="text" />
             </div>
-            <button className="button">Login</button>
+            <button className="buttons">Login</button>
           </div>
         </div>
       </div>
