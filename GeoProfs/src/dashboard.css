@@ -2,6 +2,9 @@
   --value: 16;
   --max-value: 20;
   --size: 300px;
+
+  --standard-font-size: 1rem;
+  --second-font-size: 1em;
 }
 
 @keyframes progress {
@@ -104,11 +107,11 @@
   padding-bottom: 21%;
 }
 .name {
-  font-size: 20px;
+  font-size: var(--standard-font-size);
   font-weight: bold;
 }
 .function {
-  font-size: 12px;
+  font-size: 0.8rem;
   color: #ababab;
 }
 
@@ -119,7 +122,7 @@
   width: 73%;
   padding-left: 28%;
   height: 71%;
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
 .active {
@@ -182,7 +185,7 @@
   justify-content: space-between;
 }
 .selectBox {
-  font-size: 1em;
+  font-size: var(--second-font-size);
   outline: none;
   border-radius: 5px;
   width: 18%;
@@ -204,16 +207,16 @@
 }
 .titleBlockNew {
   color: #ffb906;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 .titleBlockRequest {
-  font-size: 25px;
+  font-size: 1.6rem;
 }
 .inputBlock {
   display: flex;
   justify-content: space-between;
   padding: 5% 0;
-  font-size: 1rem;
+  font-size: var(--standard-font-size);
   color: #a8a8a8;
 }
 input {
@@ -240,7 +243,7 @@ input {
 }
 
 .button {
-  margin-top: 4%;
+  margin-top: 3%;
   color: white;
   background-color: #ffb906;
   outline: none;
@@ -248,13 +251,13 @@ input {
   width: 20%;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: var(--standard-font-size);
 }
 .middle {
   border: 1px solid #ffb906;
   height: 2rem;
   padding: 3%;
-  font-size: 1em;
+  font-size: var(--second-font-size);
   border-radius: 5px;
 }
 .inputItem {
@@ -280,8 +283,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 18px;
-  /* background-color: red; */
+  font-size: 1.2rem;
 }
 .daysOffBottom {
   height: 75%;
@@ -290,7 +292,6 @@ input {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* background-color: plum; */
 }
 .line {
   height: 2px;
@@ -309,6 +310,7 @@ input {
   color: black;
   border-radius: 5px;
   background-color: #fcfbfe;
+  font-size: var(--standard-font-size);
 }
 
 /* ///////////////////////////////////////// */
@@ -405,6 +407,7 @@ input {
   width: 100%;
   text-align: center;
   color: #a8a8a8;
+  font-size: var(--standard-font-size);
 }
 .reason {
   color: #8a8d90;
@@ -459,7 +462,7 @@ input {
   border-left: 6px solid #ffb906;
   display: flex;
   justify-content: space-around;
-  background-color: #fcfcfc;
+  background-color: #f7f7f7;
   border-radius: 5px;
 }
 .colleagueDayOffBlock_left {
@@ -477,7 +480,7 @@ input {
   justify-content: space-around;
 }
 .colleague_name {
-  font-size: 14px;
+  font-size: var(--standard-font-size);
   font-weight: bold;
 }
 .logo_colleague {
@@ -486,17 +489,17 @@ input {
   border-radius: 100%;
 }
 .colleague_function {
-  font-size: 12px;
+  font-size: 0.8rem;
   color: #8a8d90;
 }
 
 .endMonth {
   color: #aeaeae;
-  font-size: 1rem;
+  font-size: var(--standard-font-size);
   font-weight: bold;
 }
 .beginMonth {
-  font-size: 1rem;
+  font-size: var(--standard-font-size);
   font-weight: bold;
 }
 .day {
