@@ -1,18 +1,62 @@
-.progress-container {
-  width: 200px;
-  height: 100px;
-  position: relative;
-  overflow: hidden;
+:root {
+  --value: 16;
+  --max-value: 20;
+  --size: 300px;
 }
 
-.progress-bar {
+@keyframes progress {
+  0% {
+    --percentage: 0;
+  }
+  100% {
+    --percentage: calc(var(--value) * (100 / var(--max-value)));
+  }
+}
+
+@property --percentage {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: calc(var(--value) * (100 / var(--max-value)));
+  --size: 300px;
+  animation: progress 2s 0.5s forwards;
+  width: var(--size);
+  aspect-ratio: 2 / 1;
+  border-radius: 50% / 100% 100% 0 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+[role="progressbar"]::before {
+  content: "";
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #e0e0e0; /* Default background color */
-  transition: width 0.5s ease;
+  background: conic-gradient(
+    from 0.75turn at 50% 100%,
+    #ffb906 calc(var(--percentage) * 1% / 2),
+    #e4e6e7 calc(var(--percentage) * 1% / 2 + 0.1%)
+  );
+  mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: black;
 }
 
 .background {
@@ -32,11 +76,11 @@
   align-items: center;
 }
 .componentsBlock {
-  border-top-left-radius: 63px;
-  border-bottom-left-radius: 63px;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
   height: 100%;
   width: 85%;
-  background-color: #ffffff;
+  background-color: #fcfcfc;
   box-shadow: #dcdcdc 0px 2px 20px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   display: flex;
 }
@@ -109,11 +153,7 @@
   flex-direction: column;
   align-items: center;
 }
-.right {
-  width: 32%;
-  height: 100%;
-  background-color: blue;
-}
+
 .Block {
   height: 100%;
   width: 100%;
@@ -168,9 +208,11 @@ input {
   border: 1px solid #a8a8a8;
 }
 .textfield {
+  border: 1px solid #a8a8a8;
   padding: 0;
   min-height: 9rem;
   width: 100%;
+  border-radius: 5px;
 }
 .sendBlock {
   display: flex;
@@ -184,13 +226,13 @@ input {
   text-align: center;
   color: #ffb906;
 }
-button {
+.button {
   margin-top: 4%;
   color: white;
   background-color: #ffb906;
   outline: none;
   height: 2.5rem;
-  width: 100%;
+  width: 20%;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -208,11 +250,163 @@ button {
   height: 100%;
   width: 46%;
   border: 3px solid #f3f3f3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+.daysOffTop {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 18px;
+  /* background-color: red; */
+}
+.daysOffBottom {
+  height: 75%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: plum; */
+}
+.line {
+  height: 2px;
+  width: 85%;
+  background-color: #f3f3f3;
+}
+.title {
+  display: flex;
+  gap: 15px;
+}
+.seeAll {
+  gap: 5px;
+  display: flex;
+  border: 1px solid #eae9ec;
+  padding: 2%;
+  color: black;
+  border-radius: 5px;
+  background-color: #fcfbfe;
+}
+
 /* ///////////////////////////////////////// */
 .statusComponent {
   border-radius: 35px;
   width: 46%;
   height: 100%;
+  border: 3px solid #f3f3f3;
+  overflow: hidden;
+}
+
+.statusComponentBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 0;
+}
+
+.confirmed {
+  width: 80%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #f3f3f3;
+  padding: 3%;
+}
+.information {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.checkIcon {
+  color: #39c652;
+}
+
+.confirmedButton {
+  background-color: #c7f9cf;
+  color: #307746;
+  border: none;
+  padding: 2%;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid #c6e9cd;
+}
+
+.pending {
+  width: 80%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #f3f3f3;
+  padding: 3%;
+}
+.pendingButton {
+  color: #683e12;
+  background-color: #f8e5c9;
+  border: 2px solid #e9dbc8;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 2%;
+}
+
+.denied {
+  width: 80%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #f3f3f3;
+  padding: 3%;
+}
+.deniedButton {
+  background-color: #facbc8;
+  color: #621616;
+  border: 2px solid #e6c5c3;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 2%;
+}
+.clockIcon {
+  color: #f1a642;
+}
+.deniedIcon {
+  color: #d93131;
+}
+/* /////////////////////////////// */
+.maximum {
+  width: 100%;
+  text-align: center;
+  color: #a8a8a8;
+}
+.reason {
+  color: #8a8d90;
+}
+.date {
+  font-weight: bold;
+}
+/* /////////////////////////////// */
+.right {
+  width: 32%;
+  border-radius: 35px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 100%;
+  background-color: white;
+  box-shadow: #dcdcdc 0px 2px 20px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colleaguesDaysOffBlock {
+  width: 80%;
+  height: 53.5rem;
+  border-radius: 35px;
   border: 3px solid #f3f3f3;
 }

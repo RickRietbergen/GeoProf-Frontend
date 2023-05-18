@@ -2,12 +2,17 @@ import "./dashboard.css";
 import profilePicture from "../src/assets/profile.jpg";
 import logo from "../src/assets/logoGeoProf.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Status from "./assets/components/Widgets/statusComponent";
 import {
   faHouse,
   faSignal,
   faUserXmark,
   faRightFromBracket,
+  faCalendarDays,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
+import VerlofComponent from "./assets/components/Widgets/request";
+import DaysOff from "../src/assets/components/Widgets/daysOff";
 function Dashboard() {
   return (
     <div className="background">
@@ -45,42 +50,19 @@ function Dashboard() {
         <div className="left">
           <div className="Block">
             <div className="BlockAbove">
-              <div className="verlofComponent">
-                <div className="titleBlock">
-                  <p className="titleBlockNew">New</p>
-                  <p className="titleBlockRequest"> Leave Request</p>
-                </div>
-                <div className="inputBlock">
-                  <div className="inputItem">
-                    <p>Start Date</p>
-                    <input type="text" />
-                  </div>
-                  <div className="center inputItem">
-                    <p>Reason</p>
-                    <input className="middle" type="text" />
-                  </div>
-                  <div className="inputItem">
-                    <p>End Date</p>
-                    <input type="text" />
-                  </div>
-                </div>
-                <div className="textFieldBlock">
-                  <input className="textfield" type="text" />
-                </div>
-                <div className="sendBlock">
-                  <button className="sendButton">Send</button>
-                </div>
-              </div>
+              <VerlofComponent />
             </div>
             <div className="BlockDown">
               <div className="Blocks">
-                <div className="daysOffComponent"></div>
-                <div className="statusComponent"></div>
+                <DaysOff />
+                <Status />
               </div>
             </div>
           </div>
         </div>
-        <div className="right"></div>
+        <div className="right">
+          <div className="colleaguesDaysOffBlock"></div>
+        </div>
       </div>
     </div>
   );

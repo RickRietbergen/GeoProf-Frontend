@@ -77,7 +77,7 @@ input {
 input::placeholder {
   color: #bababa;
 }
-button {
+.buttons {
   margin-top: 6%;
   color: white;
   background-color: #ffb906;
