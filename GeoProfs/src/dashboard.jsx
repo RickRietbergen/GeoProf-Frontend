@@ -13,6 +13,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import VerlofComponent from "./assets/components/Widgets/request";
 import DaysOff from "../src/assets/components/Widgets/daysOff";
+import LogoutPage from "./assets/components/Logout/LogoutPage";
+
 function Dashboard() {
   return (
     <div className="background">
@@ -35,11 +37,11 @@ function Dashboard() {
             </a>
             <a className="nav_icons">
               <FontAwesomeIcon icon={faUserXmark} />
-              Days of
+              Days off
             </a>
           </div>
           <div>
-            <a className="logOut nav_icons" href="/">
+            <a className="logOut nav_icons" href="/logout">
               <FontAwesomeIcon icon={faRightFromBracket} />
               Log out
             </a>

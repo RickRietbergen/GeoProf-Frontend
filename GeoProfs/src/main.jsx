@@ -6,6 +6,7 @@ import { render } from "react-dom";
 import { SnackbarProvider } from "notistack";
 import App from "./App";
 import Dashboard from "./dashboard";
+import LogoutPage from "./assets/components/Logout/LogoutPage";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/Dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/logout",
+    element: <LogoutPage />,
   },
   {
     path: "*",
