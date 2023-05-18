@@ -458,6 +458,7 @@ input {
   width: 80%;
   height: 5rem;
   padding: 0 2%;
+  padding: 2%;
   margin: 5% 0;
   border-left: 6px solid #ffb906;
   display: flex;
