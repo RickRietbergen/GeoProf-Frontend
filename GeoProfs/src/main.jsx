@@ -2,11 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { render } from "react-dom";
 import { SnackbarProvider } from "notistack";
 import App from "./App";
-import Dashboard from "./dashboard";
 import LogoutPage from "./assets/components/Logout/LogoutPage";
+import CheckLoggedIn from "./assets/components/Hooks/checkLoggedIn";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Dashboard",
-    element: <Dashboard />,
+    element: <CheckLoggedIn />,
   },
   {
     path: "/logout",
