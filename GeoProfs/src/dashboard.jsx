@@ -17,7 +17,6 @@ import {
 import useAuth from "./assets/components/Hooks/useAuth";
 import ColleagueDayOff from "./assets/components/Widgets/ColleaguesDaysOff";
 import SideNav from "./assets/components/Widgets/sideNav";
-import { faChevronRight, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 function Dashboard() {
   const { isLoggedIn, user } = useAuth();
