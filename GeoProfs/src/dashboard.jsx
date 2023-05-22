@@ -4,14 +4,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Status from "./assets/components/Widgets/statusComponent";
 import VerlofComponent from "./assets/components/Widgets/request";
 import DaysOff from "../src/assets/components/Widgets/daysOff";
+import arrow from "../src/assets/arrow.png";
+import {
+  faHouse,
+  faSignal,
+  faUserXmark,
+  faRightFromBracket,
+  faCalendarDays,
+  faChevronRight,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
+import useAuth from "./assets/components/Hooks/useAuth";
 import ColleagueDayOff from "./assets/components/Widgets/ColleaguesDaysOff";
 import SideNav from "./assets/components/Widgets/sideNav";
-import { faChevronRight, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 function Dashboard() {
+  const { isLoggedIn, user } = useAuth();
+
   return (
     <div className="background">
-      <SideNav />
       <div className="componentsBlock">
         <div className="left">
           <div className="Block">

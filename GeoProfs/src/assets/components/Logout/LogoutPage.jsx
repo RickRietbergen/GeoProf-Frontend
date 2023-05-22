@@ -4,19 +4,18 @@ import { useNavigate } from "react-router-dom";
 const LogoutPage = ({ json }) => {
   const navigate = useNavigate();
 
-  
   useEffect(() => {
     if (json) {
-        window.localStorage.setItem("token", json.token);
-        window.localStorage.setItem("user", json.user);
-        window.localStorage.setItem("userName", json.userName);
-        window.localStorage.setItem("Persoonlijk", json.Persoonlijk);
-        window.localStorage.setItem("Vakantie", json.Vakantie);
-        window.localStorage.setItem("Ziek", json.Ziek);
-        window.localStorage.setItem("Id", json.Id);
+      window.localStorage.removeItem("token", json.token);
+      window.localStorage.removeItem("user", json.user);
+      window.localStorage.removeItem("userName", json.userName);
+      window.localStorage.removeItem("Persoonlijk", json.Persoonlijk);
+      window.localStorage.removeItem("Vakantie", json.Vakantie);
+      window.localStorage.removeItem("Ziek", json.Ziek);
+      window.localStorage.removeItem("Id", json.Id);
     }
 
-      navigate("/");
+    navigate("/");
   }, [json, navigate]);
 };
 
