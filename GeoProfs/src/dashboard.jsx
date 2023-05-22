@@ -1,16 +1,13 @@
 import "./dashboard.css";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Status from "./assets/components/Widgets/statusComponent";
 import VerlofComponent from "./assets/components/Widgets/request";
 import DaysOff from "../src/assets/components/Widgets/daysOff";
 import { faChevronRight, faUsers } from "@fortawesome/free-solid-svg-icons";
-import useAuth from "./assets/components/Hooks/useAuth";
 import ColleagueDayOff from "./assets/components/Widgets/ColleaguesDaysOff";
 import SideNav from "./assets/components/Widgets/sideNav";
 
 function Dashboard() {
-  const { isLoggedIn, user } = useAuth();
 
   return (
     <div className="background">

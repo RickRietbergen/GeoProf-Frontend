@@ -8,15 +8,23 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../../../assets/profile.jpg";
 import logo from "../../../assets/logoGeoProf.png";
+import useAuth from "../Hooks/useAuth";
+
 const Sidebar = () => {
+  const { isLoggedIn, user } = useAuth();
+
   return (
     <div className="sidenav">
       <img className="logo" src={logo} alt="" />
       <div className="lowerBlock">
         <div className="infoBlock">
-          <img className="profilePicture" src={profilePicture} alt="" />
-          <p className="name">Bart Janssen</p>
-          <p className="function">functie</p>
+          {isLoggedIn && (
+            <>
+              <img className="profilePicture" src={profilePicture} alt="" />
+              <p className="name">{user.username}</p>
+              <p className="function">functie</p>
+            </>
+          )}
         </div>
         <div className="categoryBlock">
           <a className="active">
