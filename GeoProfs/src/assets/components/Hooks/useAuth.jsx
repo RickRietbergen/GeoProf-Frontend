@@ -6,11 +6,11 @@ const useAuth = () => {
 
   const token = window.localStorage.getItem("token");
   const user = window.localStorage.getItem("user");
-  const username = window.localStorage.getItem("userName");
-  const persoonlijk = window.localStorage.getItem("Persoonlijk");
-  const vakantie = window.localStorage.getItem("Vakantie");
-  const ziek = window.localStorage.getItem("Ziek");
-  const id = window.localStorage.getItem("Id");
+  const username = window.localStorage.getItem("username");
+  const persoonlijk = window.localStorage.getItem("persoonlijk");
+  const vakantie = window.localStorage.getItem("vakantie");
+  const ziek = window.localStorage.getItem("ziek");
+  const id = window.localStorage.getItem("id");
 
   const authFetch = (url, body, useCustomUrl) => {
     const token = window.localStorage.getItem("token");

@@ -62,11 +62,11 @@ function App() {
         console.log(json);
         window.localStorage.setItem("token", json.token);
         window.localStorage.setItem("user", json.user);
-        window.localStorage.setItem("userName", json.userName);
-        window.localStorage.setItem("Persoonlijk", json.Persoonlijk);
-        window.localStorage.setItem("Vakantie", json.Vakantie);
-        window.localStorage.setItem("Ziek", json.Ziek);
-        window.localStorage.setItem("Id", json.Id);
+        window.localStorage.setItem("username", json.username);
+        window.localStorage.setItem("persoonlijk", json.persoonlijk);
+        window.localStorage.setItem("vakantie", json.vakantie);
+        window.localStorage.setItem("ziek", json.ziek);
+        window.localStorage.setItem("id", json.id);
 
         if (ok) {
           closeSnackbar();
