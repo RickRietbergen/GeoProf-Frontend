@@ -111,7 +111,7 @@ function App() {
               />
             </div>
             <button
-              className="button"
+              className="button-login"
               disabled={buttonDisabled}
               onClick={handleLogin}
             >
