@@ -422,8 +422,8 @@ input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   height: 100%;
-  background-color: white;
-  box-shadow: #dcdcdc 0px 2px 20px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  /* background-color: white; */
+  /* box-shadow: #dcdcdc 0px 2px 20px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -438,6 +438,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .colleaguesDaysOffBlock_top {
   height: 10%;
@@ -453,13 +454,14 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .colleagueDayOffBlock {
   width: 80%;
   height: 5rem;
   padding: 0 2%;
   padding: 2%;
-  margin: 5% 0;
+  margin: 3% 0;
   border-left: 6px solid #ffb906;
   display: flex;
   justify-content: space-around;
@@ -516,4 +518,131 @@ input {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+/* ///////////////////////////////////////// */
+
+@media (max-width: 1440px) {
+  .colleague_function {
+    font-size: 0.7rem;
+  }
+  .colleague_name {
+    font-size: 0.85rem;
+  }
+  .day {
+    font-size: 1.6rem;
+  }
+  .beginMonth {
+    font-size: 0.9rem;
+  }
+  .endMonth {
+    font-size: 0.9rem;
+  }
+  .colleagueDayOffBlock_left {
+    width: 53%;
+  }
+  input {
+    font-size: 0.9rem;
+  }
+  .categoryBlock {
+    font-size: 1.1rem;
+  }
+  [role="progressbar"] {
+    width: 270px;
+  }
+  .daysOffTop,
+  .colleaguesDaysOffBlock_top {
+    font-size: 1rem;
+  }
+  .middle {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 1280px) {
+  .colleague_name {
+    font-size: 0.8rem;
+  }
+  .colleagueDayOffBlock {
+    height: 4rem;
+  }
+  .day {
+    font-size: 1.3rem;
+  }
+  .beginMonth,
+  .endMonth {
+    font-size: 0.7rem;
+  }
+  .arrow {
+    width: 23%;
+  }
+  .colleague_function {
+    font-size: 0.6rem;
+  }
+  .seeAll {
+    font-size: 0.9rem;
+  }
+  .information {
+    font-size: 0.85rem;
+  }
+  .confirmedButton,
+  .deniedButton,
+  .pendingButton {
+    font-size: 0.75rem;
+  }
+  [role="progressbar"]::after {
+    font-size: 3.4rem;
+  }
+  [role="progressbar"] {
+    width: 243px;
+  }
+  .maximum {
+    font-size: 0.9rem;
+  }
+  .middle {
+    width: 9rem;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 1024px) {
+  .button {
+    font-size: 0.9rem;
+    height: 2rem;
+  }
+  .verlofComponent {
+    height: 22rem;
+  }
+  .inputItem {
+    width: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .inputBlock {
+    font-size: 0.85rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .titleBlockNew {
+    font-size: 1.3rem;
+  }
+  .titleBlockRequest {
+    font-size: 1.4rem;
+  }
+  .Blocks {
+    height: 16rem;
+  }
+  .profilePicture {
+    width: 29%;
+  }
+  [role="progressbar"] {
+    width: 200px;
+  }
+  [role="progressbar"]::after {
+    font-size: 3.1rem;
+  }
+  .maximum {
+    font-size: 0.85rem;
+  }
+  input {
+    width: 64.5%;
+  }
 }
