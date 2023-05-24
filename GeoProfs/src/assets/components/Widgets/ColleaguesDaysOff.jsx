@@ -1,7 +1,6 @@
 import React from "react";
 import "../../../dashboard.css";
 import profilePicture from "../../../assets/profile.jpg";
-
 import arrow from "../../../assets/arrow.png";
 
 const ColleagueDayOffBlock = () => {

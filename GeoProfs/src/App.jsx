@@ -92,6 +92,7 @@ function App() {
             </p>
             <div className="input">
               <input
+                className="loginField"
                 placeholder="Username"
                 error={usernameError}
                 type="text"
@@ -101,6 +102,7 @@ function App() {
                 }}
               />
               <input
+                className="loginField"
                 placeholder="Password"
                 error={passwordError}
                 type="password"

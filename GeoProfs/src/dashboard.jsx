@@ -3,15 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Status from "./assets/components/Widgets/statusComponent";
 import VerlofComponent from "./assets/components/Widgets/request";
 import DaysOff from "../src/assets/components/Widgets/daysOff";
-import { faChevronRight, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import ColleagueDayOff from "./assets/components/Widgets/ColleaguesDaysOff";
 import SideNav from "./assets/components/Widgets/sideNav";
+import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 
 function Dashboard() {
-
   return (
     <div className="background">
       <SideNav />
+      {/* <Smallernav /> */}
       <div className="componentsBlock">
         <div className="left">
           <div className="Block">
@@ -30,18 +31,13 @@ function Dashboard() {
           <div className="colleaguesDaysOffBlock">
             <div className="colleaguesDaysOffBlock_top">
               <div className="title">
-                <FontAwesomeIcon icon={faUsers} />
                 <p>Colleagues Days Off </p>
               </div>
-              <button className="seeAll">
-                <p>See all</p>
-                <FontAwesomeIcon icon={faChevronRight} />
+              <button className="dots">
+                <FontAwesomeIcon icon={faEllipsis} />
               </button>
             </div>
-            <div className="line"></div>
             <div className="colleaguesDaysOffBlock_block">
-              <ColleagueDayOff />
-              <ColleagueDayOff />
               <ColleagueDayOff />
               <ColleagueDayOff />
               <ColleagueDayOff />

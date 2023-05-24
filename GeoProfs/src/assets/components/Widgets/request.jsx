@@ -14,7 +14,6 @@ const VerlofComponent = () => {
   return (
     <div className="verlofComponent">
       <div className="titleBlock">
-        <p className="titleBlockNew">New</p>
         <p className="titleBlockRequest">Leave Request</p>
       </div>
       <div className="inputBlock">
@@ -27,7 +26,7 @@ const VerlofComponent = () => {
             onChange={handleDateChange}
           />
         </div>
-        <div className="center inputItem selectBox">
+        <div className=" inputItem ">
           <p className="request_option color">Reason</p>
           <select className="middle" defaultValue="">
             <option value="" disabled hidden>

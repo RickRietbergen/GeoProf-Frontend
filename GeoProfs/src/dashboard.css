@@ -66,14 +66,15 @@
   height: 100vh;
   width: 100%;
   display: flex;
-  background-color: #f7f7f7;
+  background-color: #ededed;
 }
 
 .sidenav {
   overflow: hidden;
   width: 15%;
   height: 100%;
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7; */
+  background-color: #ededed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +84,7 @@
   border-bottom-left-radius: 35px;
   height: 100%;
   width: 85%;
-  background-color: #fcfcfc;
+  background-color: #f9f9f9;
   box-shadow: #dcdcdc 0px 2px 20px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   display: flex;
 }
@@ -144,6 +145,7 @@
 }
 .home {
   color: #ffb906;
+  font-weight: bold;
 }
 .nav_icons {
   display: flex;
@@ -214,7 +216,8 @@
   font-size: 1.5rem;
 }
 .titleBlockRequest {
-  font-size: 1.6rem;
+  font-size: 24px;
+  font-weight: bold;
 }
 .inputBlock {
   display: flex;
@@ -225,6 +228,8 @@
 }
 input {
   border: 1px solid #a8a8a8;
+  height: 2rem;
+  width: 12rem;
 }
 .textfield {
   border: 1px solid #a8a8a8;
@@ -240,6 +245,7 @@ input {
 }
 .sendButton {
   width: 20%;
+  cursor: pointer;
 }
 .center {
   text-align: center;
@@ -258,24 +264,26 @@ input {
   font-size: var(--standard-font-size);
 }
 .middle {
-  border: 1px solid #ffb906;
-  height: 2rem;
+  height: 2.9rem;
   padding: 3%;
   font-size: var(--second-font-size);
   border-radius: 5px;
 }
+select {
+  width: 12rem;
+  height: 2rem;
+}
 .inputItem {
   gap: 8px;
   display: grid;
-}
-.color {
-  color: #ffb906;
+  width: 13rem;
 }
 /* ///////////////////////////////////////// */
 .daysOffComponent {
   border-radius: 35px;
   height: 100%;
   width: 47%;
+  background-color: white;
   border: 3px solid #f3f3f3;
   display: flex;
   align-items: center;
@@ -283,11 +291,11 @@ input {
 }
 .daysOffTop {
   height: 14%;
-  width: 100%;
+  width: 89%;
   padding: 3% 2% 0 2%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 1.2rem;
 }
 .daysOffBottom {
@@ -304,24 +312,26 @@ input {
   background-color: #f3f3f3;
 }
 .title {
-  display: flex;
-  gap: 15px;
+  font-size: 24px;
+  font-weight: bold;
 }
-.seeAll {
+.dots {
   gap: 5px;
   display: flex;
-  border: 1px solid #eae9ec;
   padding: 2%;
+  border: none;
+  border-radius: 100%;
   color: black;
-  border-radius: 5px;
-  background-color: #fcfbfe;
+  background-color: #ededed;
   font-size: var(--standard-font-size);
+  cursor: pointer;
 }
 
 /* ///////////////////////////////////////// */
 .statusComponent {
   border-radius: 35px;
   width: 47%;
+  background-color: white;
   height: 100%;
   border: 3px solid #f3f3f3;
   overflow: hidden;
@@ -343,7 +353,6 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #f3f3f3;
   padding: 3%;
 }
 .information {
@@ -372,7 +381,6 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #f3f3f3;
   padding: 3%;
 }
 .pendingButton {
@@ -390,7 +398,6 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #f3f3f3;
   padding: 3%;
 }
 .deniedButton {
@@ -439,6 +446,7 @@ input {
   width: 80%;
   height: 52.3rem;
   border-radius: 35px;
+  background-color: white;
   border: 3px solid #f3f3f3;
   display: flex;
   flex-direction: column;
@@ -462,11 +470,10 @@ input {
   overflow: hidden;
 }
 .colleagueDayOffBlock {
-  width: 80%;
-  height: 5rem;
+  width: 85%;
+  height: 9rem;
   padding: 0 2%;
-  padding: 2%;
-  margin: 3% 0;
+  margin: 6% 0;
   border-left: 6px solid #ffb906;
   display: flex;
   justify-content: space-around;
@@ -474,7 +481,7 @@ input {
   border-radius: 5px;
 }
 .colleagueDayOffBlock_left {
-  width: 50%;
+  width: 55%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -516,7 +523,7 @@ input {
 }
 
 .arrow {
-  width: 30%;
+  width: 20%;
 }
 .align-center {
   display: flex;
@@ -525,6 +532,9 @@ input {
   align-items: center;
 }
 /* ///////////////////////////////////////// */
+.smallerLogo {
+  width: 10%;
+}
 
 @media (max-width: 1440px) {
   .colleague_function {
@@ -651,3 +661,4 @@ input {
     width: 64.5%;
   }
 }
+/* /////////////////////////////////////// */
