@@ -25,8 +25,8 @@ const VerlofComponent = () => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
    const handleStartDateChange = (event) => {
-     const reason = event.target.value;
-     setStartDate(reason);
+     const startDate = event.target.value;
+     setStartDate(startDate);
    };
    
    const handleReasonChange = (event) => {
@@ -45,6 +45,12 @@ const VerlofComponent = () => {
    };
 
   const submitRequest = () => {
+    if (!absenceReason || !description) {
+      enqueueSnackbar("Please fill in all the required fields.", {
+        variant: "error",
+      });
+      return;
+    }
     setButtonDisabled(true);
 
     const requestData = {
@@ -56,22 +62,24 @@ const VerlofComponent = () => {
 
     console.log("Verzonden gegevens:", requestData);
 
-    fetch(`${API_URL}VerlofAanvraag`, {
+    fetch(`${API_URL}Verlof/VerlofAanvraag`, {
       method: "POST",
       body: JSON.stringify(requestData),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-    }).then((res) => {
-      setButtonDisabled(false);
-      // if (!res.ok) {
-      //   res.text().then((text) => enqueueSnackbar(text, { variant: "error" }));
-      //   return;
-      // }
+    })
+      .then((res) => {
+        setButtonDisabled(false);
+        if (!res.ok) {
+          res.text().then((text) =>
+              enqueueSnackbar("An error occurred while submitting the request.", { variant: "error" }));
+          return;
+        }
 
-      // enqueueSnackbar("request submitted ", { variant: "success" });
-      navigate("/dashboard");
-    });
+        enqueueSnackbar("request submitted ", { variant: "success" });
+        navigate("/dashboard");
+      });
   };
 
   return (
