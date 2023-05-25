@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { API_URL } from "../../../constants/links";
 
 const VerlofComponent = () => {
   const [selectedDate, setSelectedDate] = useState("");
@@ -10,6 +11,39 @@ const VerlofComponent = () => {
 
   const minDate = new Date();
   minDate.setDate(minDate.getDate() + 1);
+
+  const [startDate, setStartDate] = useState("");
+  const [absenceReason, setAbsenceReason] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [description, setDescription] = useState("");
+
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
+  const submitRequest = () => {
+    setButtonDisabled(true);
+
+    fetch(`${API_URL}VerlofAanvraag`, {
+      method: "POST",
+      body: JSON.stringify({
+        startDate,
+        absenceReason,
+        endDate,
+        description,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).then((res) => {
+      setButtonDisabled(false);
+      if (!res.ok) {
+        res.text().then((text) => enqueueSnackbar(text, { variant: "error" }));
+        return;
+      }
+
+      enqueueSnackbar("request submitted ", { variant: "success" });
+      navigate("/dashboard");
+    });
+  };
 
   return (
     <div className="verlofComponent">
@@ -56,7 +90,13 @@ const VerlofComponent = () => {
         placeholder="Type your reason for your leave request here"
       ></textarea>
       <div className="sendBlock">
-        <button className="sendButton button">Send</button>
+        <button
+          className="sendButton button"
+          onClick={submitRequest}
+          disabled={buttonDisabled}
+        >
+          Send
+        </button>
       </div>
     </div>
   );
