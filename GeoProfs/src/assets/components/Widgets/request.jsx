@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../constants/links";
 
 const VerlofComponent = () => {
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const navigate = useNavigate();
+
   const [selectedDate, setSelectedDate] = useState("");
 
   const handleDateChange = (event) => {
@@ -19,28 +24,52 @@ const VerlofComponent = () => {
 
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
+   const handleStartDateChange = (event) => {
+     const reason = event.target.value;
+     setStartDate(reason);
+   };
+   
+   const handleReasonChange = (event) => {
+     const absenceReason = event.target.value;
+     setAbsenceReason(absenceReason);
+   };
+
+   const handleEndDateChange = (event) => {
+     const endDate = event.target.value;
+     setEndDate(endDate);
+   };
+
+   const handleDescriptionChange = (event) => {
+     const description = event.target.value;
+     setDescription(description);
+   };
+
   const submitRequest = () => {
     setButtonDisabled(true);
 
+    const requestData = {
+      startDate,
+      absenceReason,
+      endDate,
+      description,
+    };
+
+    console.log("Verzonden gegevens:", requestData);
+
     fetch(`${API_URL}VerlofAanvraag`, {
       method: "POST",
-      body: JSON.stringify({
-        startDate,
-        absenceReason,
-        endDate,
-        description,
-      }),
+      body: JSON.stringify(requestData),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     }).then((res) => {
       setButtonDisabled(false);
-      if (!res.ok) {
-        res.text().then((text) => enqueueSnackbar(text, { variant: "error" }));
-        return;
-      }
+      // if (!res.ok) {
+      //   res.text().then((text) => enqueueSnackbar(text, { variant: "error" }));
+      //   return;
+      // }
 
-      enqueueSnackbar("request submitted ", { variant: "success" });
+      // enqueueSnackbar("request submitted ", { variant: "success" });
       navigate("/dashboard");
     });
   };
@@ -56,13 +85,17 @@ const VerlofComponent = () => {
           <input
             type="date"
             min={minDate.toISOString().split("T")[0]}
-            value={selectedDate}
-            onChange={handleDateChange}
+            value={startDate}
+            onChange={handleStartDateChange}
           />
         </div>
         <div className=" inputItem ">
           <p className="request_option color">Reason</p>
-          <select className="middle" defaultValue="">
+          <select
+            className="middle"
+            value={absenceReason}
+            onChange={handleReasonChange}
+          >
             <option value="" disabled hidden>
               Select a reason
             </option>
@@ -76,8 +109,8 @@ const VerlofComponent = () => {
           <input
             type="date"
             min={minDate.toISOString().split("T")[0]}
-            value={selectedDate}
-            onChange={handleDateChange}
+            value={endDate}
+            onChange={handleEndDateChange}
           />
         </div>
       </div>
@@ -88,6 +121,8 @@ const VerlofComponent = () => {
         rows="4"
         cols="50"
         placeholder="Type your reason for your leave request here"
+        value={description}
+        onChange={handleDescriptionChange}
       ></textarea>
       <div className="sendBlock">
         <button
