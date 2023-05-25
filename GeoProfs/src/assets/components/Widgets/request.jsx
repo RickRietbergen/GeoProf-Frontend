@@ -17,35 +17,35 @@ const VerlofComponent = () => {
   const minDate = new Date();
   minDate.setDate(minDate.getDate() + 1);
 
-  const [startDate, setStartDate] = useState("");
-  const [absenceReason, setAbsenceReason] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [description, setDescription] = useState("");
+  const [From, setFromDate] = useState("");
+  const [VerlofReden, setVerlofReden] = useState("");
+  const [Until, setUntilDate] = useState("");
+  const [Beschrijving, setBeschrijving] = useState("");
 
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
-   const handleStartDateChange = (event) => {
-     const startDate = event.target.value;
-     setStartDate(startDate);
+   const handleFromDateChange = (event) => {
+     const From = event.target.value;
+     setFromDate(From);
    };
    
    const handleReasonChange = (event) => {
-     const absenceReason = event.target.value;
-     setAbsenceReason(absenceReason);
+     const VerlofReden = event.target.value;
+     setVerlofReden(VerlofReden);
    };
 
-   const handleEndDateChange = (event) => {
-     const endDate = event.target.value;
-     setEndDate(endDate);
+   const handleUntilDateChange = (event) => {
+     const Until = event.target.value;
+     setUntilDate(Until);
    };
 
-   const handleDescriptionChange = (event) => {
-     const description = event.target.value;
-     setDescription(description);
+   const handleBeschrijvingChange = (event) => {
+     const Beschrijving = event.target.value;
+     setBeschrijving(Beschrijving);
    };
 
   const submitRequest = () => {
-    if (!absenceReason || !description) {
+    if (!VerlofReden || !Beschrijving) {
       enqueueSnackbar("Please fill in all the required fields.", {
         variant: "error",
       });
@@ -54,10 +54,10 @@ const VerlofComponent = () => {
     setButtonDisabled(true);
 
     const requestData = {
-      startDate,
-      absenceReason,
-      endDate,
-      description,
+      From,
+      VerlofReden,
+      Until,
+      Beschrijving,
     };
 
     console.log("Verzonden gegevens:", requestData);
@@ -93,15 +93,15 @@ const VerlofComponent = () => {
           <input
             type="date"
             min={minDate.toISOString().split("T")[0]}
-            value={startDate}
-            onChange={handleStartDateChange}
+            value={From}
+            onChange={handleFromDateChange}
           />
         </div>
         <div className=" inputItem ">
           <p className="request_option color">Reason</p>
           <select
             className="middle"
-            value={absenceReason}
+            value={VerlofReden}
             onChange={handleReasonChange}
           >
             <option value="" disabled hidden>
@@ -117,8 +117,8 @@ const VerlofComponent = () => {
           <input
             type="date"
             min={minDate.toISOString().split("T")[0]}
-            value={endDate}
-            onChange={handleEndDateChange}
+            value={Until}
+            onChange={handleUntilDateChange}
           />
         </div>
       </div>
@@ -129,8 +129,8 @@ const VerlofComponent = () => {
         rows="4"
         cols="50"
         placeholder="Type your reason for your leave request here"
-        value={description}
-        onChange={handleDescriptionChange}
+        value={Beschrijving}
+        onChange={handleBeschrijvingChange}
       ></textarea>
       <div className="sendBlock">
         <button
