@@ -4,26 +4,22 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../constants/links";
 
 const VerlofComponent = () => {
+  //popups en navigate tussen pagina's
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
-  const [selectedDate, setSelectedDate] = useState("");
-
-  const handleDateChange = (event) => {
-    const selectedDate = event.target.value;
-    setSelectedDate(selectedDate);
-  };
-
+  //datum select inputs
   const minDate = new Date();
   minDate.setDate(minDate.getDate() + 1);
 
+  //Verlof Aanvragen
   const [From, setFromDate] = useState("");
   const [VerlofReden, setVerlofReden] = useState("");
   const [Until, setUntilDate] = useState("");
   const [Beschrijving, setBeschrijving] = useState("");
-
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
+  //wijs data toe aan var, meesturen in POST request.
    const handleFromDateChange = (event) => {
      const From = event.target.value;
      setFromDate(From);
@@ -45,7 +41,7 @@ const VerlofComponent = () => {
    };
 
   const submitRequest = () => {
-    if (!VerlofReden || !Beschrijving) {
+    if (!From || !VerlofReden || !Until || !Beschrijving) {
       enqueueSnackbar("Please fill in all the required fields.", {
         variant: "error",
       });
@@ -60,7 +56,7 @@ const VerlofComponent = () => {
       Beschrijving,
     };
 
-    console.log("Verzonden gegevens:", requestData);
+    // console.log("Verzonden gegevens:", requestData);
 
     fetch(`${API_URL}Verlof/VerlofAanvraag`, {
       method: "POST",
