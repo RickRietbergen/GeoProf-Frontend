@@ -12,10 +12,9 @@ const StatusComponent = () => {
   const [verlofData, setVerlofData] = useState(null);
 
   const fetchVerlof = () => {
-    authFetch("GetVerlof", { Method: "GET" })
-    .then((r) => r.json())
-    .then((data) => setVerlofData(data));
-  }
+    authFetch("verlof", { Method: "GET" })
+      .then((data) => setVerlofData(data));
+  };
   console.log(verlofData);
 
   useEffect(() => {
@@ -23,7 +22,7 @@ const StatusComponent = () => {
 
     fetchVerlof();
   }, []);
-  
+
   return (
     <div className="statusComponent">
       <DaysOffTop />
