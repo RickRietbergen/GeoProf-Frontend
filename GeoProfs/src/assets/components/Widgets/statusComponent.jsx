@@ -1,11 +1,28 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ConfirmedStatus from "../status/Confirmed";
 import DeniedStatus from "../status/Denied";
 import PendingStatus from "../status/Pending";
+import useAuth from "../Hooks/useAuth";
 
 const StatusComponent = () => {
+  const { isLoggedIn, authFetch } = useAuth();
+  const [verlofData, setVerlofData] = useState(null);
+
+  const fetchVerlof = () => {
+    authFetch("verlof", { Method: "GET" })
+      .then((data) => setVerlofData(data));
+  };
+  console.log(verlofData);
+
+  useEffect(() => {
+    if (!isLoggedIn) navigate("/login");
+
+    fetchVerlof();
+  }, []);
+
   return (
     <div className="statusComponent">
       <DaysOffTop />
