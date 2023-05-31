@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../../../constants/links";
+import useAuth from "../Hooks/useAuth";
 
 const VerlofComponent = () => {
   //popups en navigate tussen pagina's
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const navigate = useNavigate();
+  const { authFetch } = useAuth();
 
   //datum select inputs
   const minDate = new Date();
@@ -20,25 +22,25 @@ const VerlofComponent = () => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   //wijs data toe aan var, meesturen in POST request.
-   const handleFromDateChange = (event) => {
-     const From = event.target.value;
-     setFromDate(From);
-   };
-   
-   const handleReasonChange = (event) => {
-     const VerlofReden = event.target.value;
-     setVerlofReden(VerlofReden);
-   };
+  const handleFromDateChange = (event) => {
+    const From = event.target.value;
+    setFromDate(From);
+  };
 
-   const handleUntilDateChange = (event) => {
-     const Until = event.target.value;
-     setUntilDate(Until);
-   };
+  const handleReasonChange = (event) => {
+    const VerlofReden = event.target.value;
+    setVerlofReden(VerlofReden);
+  };
 
-   const handleBeschrijvingChange = (event) => {
-     const Beschrijving = event.target.value;
-     setBeschrijving(Beschrijving);
-   };
+  const handleUntilDateChange = (event) => {
+    const Until = event.target.value;
+    setUntilDate(Until);
+  };
+
+  const handleBeschrijvingChange = (event) => {
+    const Beschrijving = event.target.value;
+    setBeschrijving(Beschrijving);
+  };
 
   const submitRequest = () => {
     if (!From || !VerlofReden || !Until || !Beschrijving) {
@@ -58,24 +60,24 @@ const VerlofComponent = () => {
 
     // console.log("Verzonden gegevens:", requestData);
 
-    fetch(`${API_URL}Verlof/VerlofAanvraag`, {
+    authFetch(`Verlof/VerlofAanvraag`, {
       method: "POST",
       body: JSON.stringify(requestData),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((res) => {
-        setButtonDisabled(false);
-        if (!res.ok) {
-          res.text().then((text) =>
-              enqueueSnackbar("An error occurred while submitting the request.", { variant: "error" }));
-          return;
-        }
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    }).then((res) => {
+      setButtonDisabled(false);
+      if (!res.ok) {
+        res.text().then((text) =>
+          enqueueSnackbar("An error occurred while submitting the request.", {
+            variant: "error",
+          })
+        );
+        return;
+      }
 
-        enqueueSnackbar("request submitted ", { variant: "success" });
-        navigate("/dashboard");
-      });
+      enqueueSnackbar("request submitted ", { variant: "success" });
+      navigate("/dashboard");
+    });
   };
 
   return (
