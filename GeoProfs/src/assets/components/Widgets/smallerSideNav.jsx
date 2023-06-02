@@ -8,10 +8,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../../../assets/profile.jpg";
 import logo from "../../../assets/logoGeoProf.png";
+import "../../../smalnav.css";
 const SmallerSideNav = () => {
   return (
     <div className="smallerSidenav">
-      <img className="smallerLogo" src={logo} alt="" />
       <div className="lowerBlock">
         <div className="infoBlock">
           <img className="profilePicture" src={profilePicture} alt="" />
