@@ -7,7 +7,10 @@ import PendingStatus from "../status/Pending";
 
 const StatusComponent = () => {
   return (
-    <div className="statusComponent">
+    <div
+      className="statusComponent"
+      onClick={() => (window.location.href = `/status`)}
+    >
       <DaysOffTop />
       <StatusComponentBottom />
     </div>

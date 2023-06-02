@@ -6,6 +6,9 @@
 .loginField {
   width: auto;
 }
+.active {
+  width: 97%;
+}
 .login-background {
   height: 100vh;
   width: 100vw;

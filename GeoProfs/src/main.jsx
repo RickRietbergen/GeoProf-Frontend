@@ -7,6 +7,7 @@ import { SnackbarProvider } from "notistack";
 import App from "./App";
 import Dashboard from "./dashboard";
 import LogoutPage from "./assets/components/Logout/LogoutPage";
+import Status from "../src/statuspage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/Dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/status",
+    element: <Status />,
   },
   {
     path: "/logout",

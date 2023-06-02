@@ -10,7 +10,7 @@ import profilePicture from "../../../assets/profile.jpg";
 import logo from "../../../assets/logoGeoProf.png";
 import useAuth from "../Hooks/useAuth";
 
-const Sidebar = () => {
+const Navbar = ({ value }) => {
   const { isLoggedIn, user } = useAuth();
 
   return (
@@ -27,11 +27,17 @@ const Sidebar = () => {
           )}
         </div>
         <div className="categoryBlock">
-          <a className="active">
-            <FontAwesomeIcon className="home" icon={faHouse} />
+          <a
+            className={`nav_icons ${value === "dashboard" ? "active" : ""}`}
+            onClick={() => (window.location.href = `/dashboard`)}
+          >
+            <FontAwesomeIcon icon={faHouse} />
             <p>Home</p>
           </a>
-          <a className="nav_icons">
+          <a
+            className={`nav_icons ${value === "status" ? "active" : ""}`}
+            onClick={() => (window.location.href = `/status`)}
+          >
             <FontAwesomeIcon icon={faSignal} />
             Status
           </a>
@@ -51,4 +57,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Navbar;

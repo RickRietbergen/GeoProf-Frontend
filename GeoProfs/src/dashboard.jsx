@@ -11,8 +11,8 @@ import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 function Dashboard() {
   return (
     <div className="background">
-      <SideNav />
-      {/* <Smallernav /> */}
+      <SideNav value="dashboard" className="nav" />
+      <Smallernav className="smallNav" />
       <div className="componentsBlock">
         <div className="left">
           <div className="Block">
@@ -38,6 +38,7 @@ function Dashboard() {
               </button>
             </div>
             <div className="colleaguesDaysOffBlock_block">
+              <ColleagueDayOff />
               <ColleagueDayOff />
               <ColleagueDayOff />
               <ColleagueDayOff />

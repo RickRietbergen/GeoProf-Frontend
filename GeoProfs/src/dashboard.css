@@ -1,3 +1,11 @@
+.active {
+  border-right: 5px solid #ffb906 !important;
+  display: flex;
+  gap: 15px;
+  color: #ffb906 !important;
+  font-weight: bold;
+  cursor: pointer;
+}
 :root {
   --value: 16;
   --max-value: 20;
@@ -79,9 +87,8 @@
   flex-direction: column;
   align-items: center;
 }
+
 .componentsBlock {
-  border-top-left-radius: 35px;
-  border-bottom-left-radius: 35px;
   height: 100%;
   width: 85%;
   background-color: #f9f9f9;
@@ -95,10 +102,11 @@
 }
 
 .profilePicture {
-  width: 20%;
+  width: 35%;
   object-fit: cover;
   border-radius: 100%;
-  padding-bottom: 3%;
+  padding-bottom: 7%;
+  padding-top: 10%;
 }
 .infoBlock {
   width: 100%;
@@ -108,12 +116,13 @@
   padding-bottom: 21%;
 }
 .name {
-  font-size: var(--standard-font-size);
+  font-size: 20px;
   font-weight: bold;
 }
 .function {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #ababab;
+  margin-top: 7px;
 }
 
 .categoryBlock {
@@ -126,11 +135,6 @@
   font-size: 1.3rem;
 }
 
-.active {
-  border-right: 5px solid #ffb906;
-  display: flex;
-  gap: 15px;
-}
 .lowerBlock {
   display: flex;
   flex-direction: column;
@@ -143,14 +147,12 @@
   text-decoration: none;
   color: black;
 }
-.home {
-  color: #ffb906;
-  font-weight: bold;
-}
+
 .nav_icons {
   display: flex;
   gap: 15px;
   color: #c5c5c8;
+  cursor: pointer;
 }
 .left {
   width: 65%;
@@ -472,8 +474,8 @@ select {
 .colleagueDayOffBlock {
   width: 85%;
   height: 9rem;
-  padding: 0 2%;
-  margin: 6% 0;
+  padding: 7px 2%;
+  margin: 3% 0;
   border-left: 6px solid #ffb906;
   display: flex;
   justify-content: space-around;
@@ -532,9 +534,6 @@ select {
   align-items: center;
 }
 /* ///////////////////////////////////////// */
-.smallerLogo {
-  width: 10%;
-}
 
 @media (max-width: 1440px) {
   .colleague_function {
@@ -571,6 +570,12 @@ select {
   .middle {
     font-size: 0.8rem;
   }
+  .statusComponent {
+    height: 99%;
+  }
+  .colleaguesDaysOffBlock {
+    height: 53rem;
+  }
 }
 @media (max-width: 1280px) {
   .colleague_name {
@@ -578,7 +583,13 @@ select {
   }
   .colleagueDayOffBlock {
     height: 4rem;
+    padding: 3%;
   }
+  .colleaguesDaysOffBlock {
+    height: 52rem;
+    width: 86%;
+  }
+
   .day {
     font-size: 1.3rem;
   }
@@ -615,18 +626,45 @@ select {
   .middle {
     width: 9rem;
     font-size: 0.9rem;
+    border: 1px solid#a8a8a8;
+  }
+  .Blocks {
+    height: 16rem;
+  }
+  .title {
+    font-size: 18px;
+  }
+  input {
+    width: 8.45rem;
+  }
+  .inputItem {
+    width: 9rem;
+  }
+  .verlofComponent {
+    height: 23.4rem;
+  }
+
+  .verlofComponent {
+    height: 29rem;
+  }
+  .textfield {
+    min-height: 14rem;
+  }
+  .statusComponent {
+    height: 99%;
   }
 }
 @media (max-width: 1024px) {
   .button {
     font-size: 0.9rem;
-    height: 2rem;
+    height: 1.9rem;
+    width: 18%;
   }
   .verlofComponent {
-    height: 22rem;
+    height: 29rem;
   }
   .inputItem {
-    width: 9rem;
+    width: 11rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -642,7 +680,7 @@ select {
   .titleBlockRequest {
     font-size: 1.4rem;
   }
-  .Blocks {
+  .componentsBlock .Blocks {
     height: 16rem;
   }
   .profilePicture {
@@ -657,8 +695,70 @@ select {
   .maximum {
     font-size: 0.85rem;
   }
+
+  .componentsBlock {
+    width: 95%;
+  }
+  .colleagueDayOffBlock {
+    padding: 3% 2%;
+  }
+  .textfield {
+    min-height: 16.4rem;
+  }
+  .middle {
+    width: 100%;
+    height: 2.7rem;
+  }
   input {
-    width: 64.5%;
+    width: 89%;
+  }
+  .smallerSidenav {
+    padding: 2% 0;
+  }
+  .categoryBlock {
+    padding-left: 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .profilePicture {
+    width: 85%;
+  }
+  .categoryBlock {
+    width: 41%;
+  }
+  .componentsBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .left {
+    width: 100%;
+  }
+  .titleBlockRequest {
+    font-size: 1.2rem;
+  }
+  .textfield {
+    min-height: 7.4rem;
+  }
+  .BlockAbove {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .verlofComponent {
+    height: 21rem;
+  }
+  .daysOffComponent,
+  .statusComponent {
+    height: 86%;
+    width: 31%;
+  }
+  .reason {
+    display: none;
   }
 }
 /* /////////////////////////////////////// */
