@@ -1,15 +1,84 @@
 import React, { useState } from "react";
+import { useSnackbar } from "notistack";
+import { useNavigate } from "react-router-dom";
+import { API_URL } from "../../../constants/links";
+import useAuth from "../Hooks/useAuth";
 
 const VerlofComponent = () => {
-  const [selectedDate, setSelectedDate] = useState("");
+  //popups en navigate tussen pagina's
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const navigate = useNavigate();
+  const { authFetch } = useAuth();
 
-  const handleDateChange = (event) => {
-    const selectedDate = event.target.value;
-    setSelectedDate(selectedDate);
-  };
-
+  //datum select inputs
   const minDate = new Date();
   minDate.setDate(minDate.getDate() + 1);
+
+  //Verlof Aanvragen
+  const [From, setFromDate] = useState("");
+  const [VerlofReden, setVerlofReden] = useState("");
+  const [Until, setUntilDate] = useState("");
+  const [Beschrijving, setBeschrijving] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
+  //wijs data toe aan var, meesturen in POST request.
+  const handleFromDateChange = (event) => {
+    const From = event.target.value;
+    setFromDate(From);
+  };
+
+  const handleReasonChange = (event) => {
+    const VerlofReden = event.target.value;
+    setVerlofReden(VerlofReden);
+  };
+
+  const handleUntilDateChange = (event) => {
+    const Until = event.target.value;
+    setUntilDate(Until);
+  };
+
+  const handleBeschrijvingChange = (event) => {
+    const Beschrijving = event.target.value;
+    setBeschrijving(Beschrijving);
+  };
+
+  const submitRequest = () => {
+    if (!From || !VerlofReden || !Until || !Beschrijving) {
+      enqueueSnackbar("Please fill in all the required fields.", {
+        variant: "error",
+      });
+      return;
+    }
+    setButtonDisabled(true);
+
+    const requestData = {
+      From,
+      VerlofReden,
+      Until,
+      Beschrijving,
+    };
+
+    // console.log("Verzonden gegevens:", requestData);
+
+    authFetch(`Verlof/VerlofAanvraag`, {
+      method: "POST",
+      body: JSON.stringify(requestData),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    }).then((res) => {
+      setButtonDisabled(false);
+      if (!res.ok) {
+        res.text().then((text) =>
+          enqueueSnackbar("An error occurred while submitting the request.", {
+            variant: "error",
+          })
+        );
+        return;
+      }
+
+      enqueueSnackbar("request submitted ", { variant: "success" });
+      navigate("/dashboard");
+    });
+  };
 
   return (
     <div className="verlofComponent">
@@ -22,13 +91,17 @@ const VerlofComponent = () => {
           <input
             type="date"
             min={minDate.toISOString().split("T")[0]}
-            value={selectedDate}
-            onChange={handleDateChange}
+            value={From}
+            onChange={handleFromDateChange}
           />
         </div>
         <div className=" inputItem ">
           <p className="request_option color">Reason</p>
-          <select className="middle" defaultValue="">
+          <select
+            className="middle"
+            value={VerlofReden}
+            onChange={handleReasonChange}
+          >
             <option value="" disabled hidden>
               Select a reason
             </option>
@@ -42,8 +115,8 @@ const VerlofComponent = () => {
           <input
             type="date"
             min={minDate.toISOString().split("T")[0]}
-            value={selectedDate}
-            onChange={handleDateChange}
+            value={Until}
+            onChange={handleUntilDateChange}
           />
         </div>
       </div>
@@ -54,9 +127,17 @@ const VerlofComponent = () => {
         rows="4"
         cols="50"
         placeholder="Type your reason for your leave request here"
+        value={Beschrijving}
+        onChange={handleBeschrijvingChange}
       ></textarea>
       <div className="sendBlock">
-        <button className="sendButton button">Send</button>
+        <button
+          className="sendButton button"
+          onClick={submitRequest}
+          disabled={buttonDisabled}
+        >
+          Send
+        </button>
       </div>
     </div>
   );
