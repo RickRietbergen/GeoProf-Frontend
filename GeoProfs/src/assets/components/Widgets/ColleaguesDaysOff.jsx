@@ -9,7 +9,14 @@ const ColleagueDayOffBlock = () => {
   const [verlofData, setVerlofData] = useState(null);
 
   const fetchVerlof = () => {
-    authFetch("verlof", { Method: "GET" }).then((data) => setVerlofData(data.slice(0, 5)));
+    authFetch("verlof", { method: "GET" })
+      .then((data) => {
+        const filteredData = data.filter((verlof) => verlof.userId != user.id);
+        setVerlofData(filteredData.slice(0, 5));
+      })
+      .catch((error) => {
+        console.log("Error fetching verlof data:", error);
+      });
   };
 
   useEffect(() => {
@@ -17,10 +24,9 @@ const ColleagueDayOffBlock = () => {
 
     fetchVerlof();
   }, []);
-  console.log(verlofData);
   return (
     <div className="colleaguesDaysOffBlock_block">
-      {verlofData ? (
+      {verlofData && verlofData.length !== 0 ? (
         verlofData.map((verlof) => {
           const from = new Date(verlof.from);
           const until = new Date(verlof.until);
@@ -43,7 +49,7 @@ const ColleagueDayOffBlock = () => {
                 <img className="logo_colleague" src={profilePicture} alt="" />
                 <div>
                   <p className="colleague_name">{verlof.username}</p>
-                  <p className="colleague_function">{verlof.verlofReden}</p>
+                  <p className="colleague_function">functie</p>
                 </div>
               </div>
               <div className="colleagueDayOffBlock_right">
