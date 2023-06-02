@@ -37,11 +37,7 @@ function Dashboard() {
                 <FontAwesomeIcon icon={faEllipsis} />
               </button>
             </div>
-            <div className="colleaguesDaysOffBlock_block">
-              <ColleagueDayOff />
-              <ColleagueDayOff />
-              <ColleagueDayOff />
-              <ColleagueDayOff />
+            <div>
               <ColleagueDayOff />
             </div>
           </div>

@@ -15,7 +15,7 @@ const StatusComponent = () => {
     authFetch("verlof", { Method: "GET" })
       .then((data) => setVerlofData(data));
   };
-  console.log(verlofData);
+  // console.log(verlofData);
 
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
