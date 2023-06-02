@@ -444,7 +444,7 @@ select {
 
 .colleaguesDaysOffBlock {
   width: 80%;
-  height: 52.3rem;
+  height: 53.3rem;
   border-radius: 35px;
   background-color: white;
   border: 3px solid #f3f3f3;
@@ -471,7 +471,7 @@ select {
 }
 .colleagueDayOffBlock {
   width: 85%;
-  height: 9rem;
+  height: 6rem;
   padding: 0 2%;
   margin: 6% 0;
   border-left: 6px solid #ffb906;
@@ -485,7 +485,7 @@ select {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .colleagueDayOffBlock_right {
   width: 40%;
