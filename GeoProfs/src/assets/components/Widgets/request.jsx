@@ -60,11 +60,31 @@ const VerlofComponent = () => {
 
     // console.log("Verzonden gegevens:", requestData);
 
+    // authFetch(`Verlof/VerlofAanvraag`, {
+    //   method: "POST",
+    //   body: JSON.stringify(requestData),
+    //   headers: { "Content-type": "application/json; charset=UTF-8" },
+    // }).then((res) => {
+    //   setButtonDisabled(false);
+    //   if (!res.ok) {
+    //     res.text().then((text) =>
+    //       enqueueSnackbar("An error occurred while submitting the request.", {
+    //         variant: "error",
+    //       })
+    //     );
+    //     return;
+    //   }
+
+    //   enqueueSnackbar("request submitted ", { variant: "success" });
+    //   navigate("/dashboard");
+    // });
+
     authFetch(`Verlof/VerlofAanvraag`, {
       method: "POST",
       body: JSON.stringify(requestData),
       headers: { "Content-type": "application/json; charset=UTF-8" },
-    }).then((res) => {
+    })
+    .then((res) => {
       setButtonDisabled(false);
       if (!res.ok) {
         res.text().then((text) =>
@@ -75,8 +95,24 @@ const VerlofComponent = () => {
         return;
       }
 
-      enqueueSnackbar("request submitted ", { variant: "success" });
+      // Check if response is valid JSON
+      const contentType = res.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        return res.json(); // Parse response as JSON
+      } else {
+        throw new Error("Invalid response format. Expected JSON.");
+      }
+    })
+    .then((data) => {
+      // Handle the parsed JSON data
+      enqueueSnackbar("Request submitted.", { variant: "success" });
       navigate("/dashboard");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      enqueueSnackbar("An error occurred while submitting the request.", {
+        variant: "error",
+      });
     });
   };
 
