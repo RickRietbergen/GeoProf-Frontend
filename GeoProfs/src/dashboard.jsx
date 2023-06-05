@@ -39,7 +39,6 @@ function Dashboard() {
             </div>
             <div>
               <ColleagueDayOff />
-              <ColleagueDayOff />
             </div>
           </div>
         </div>
