@@ -1,0 +1,36 @@
+.colleague_block {
+  height: 11rem;
+  width: 22rem;
+  background-color: white;
+}
+.colleague_block_top {
+  height: 55%;
+  width: 100%;
+  border-left: 6px solid #ffb906;
+  display: flex;
+}
+.colleague_block_bottom {
+  height: 45%;
+  width: 100%;
+  border-top: 2px solid #f3f3f3;
+}
+.daysOffPicture {
+  height: 3.9rem;
+  width: auto;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.img_text {
+  width: 68%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.bold {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.function_daysOff {
+  font-size: 1rem;
+  color: #ababab;
+}

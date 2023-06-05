@@ -29,19 +29,22 @@ const Navbar = ({ value }) => {
         <div className="categoryBlock">
           <a
             className={`nav_icons ${value === "dashboard" ? "active" : ""}`}
-            onClick={() => (window.location.href = `/dashboard`)}
+            onClick={() => (window.location.href = "/dashboard")}
           >
             <FontAwesomeIcon icon={faHouse} />
             <p>Home</p>
           </a>
           <a
             className={`nav_icons ${value === "status" ? "active" : ""}`}
-            onClick={() => (window.location.href = `/status`)}
+            onClick={() => (window.location.href = "/status")}
           >
             <FontAwesomeIcon icon={faSignal} />
             Status
           </a>
-          <a className="nav_icons">
+          <a
+            className={`nav_icons ${value === "daysoff" ? "active" : ""}`}
+            onClick={() => (window.location.href = "/daysoff")}
+          >
             <FontAwesomeIcon icon={faUserXmark} />
             Days off
           </a>
