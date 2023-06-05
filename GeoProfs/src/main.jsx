@@ -8,6 +8,7 @@ import App from "./App";
 import Dashboard from "./dashboard";
 import LogoutPage from "./assets/components/Logout/LogoutPage";
 import Status from "../src/statuspage";
+import DaysOff from "./daysoffPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/logout",
     element: <LogoutPage />,
+  },
+  {
+    path: "/daysOff",
+    element: <DaysOff />,
   },
   {
     path: "*",
