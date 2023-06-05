@@ -15,7 +15,12 @@ const Navbar = ({ value }) => {
 
   return (
     <div className="sidenav">
-      <img className="logo" src={logo} alt="" />
+      <img
+        className="logo"
+        src={logo}
+        alt="logo"
+        onClick={() => (window.location.href = `/dashboard`)}
+      />
       <div className="lowerBlock">
         <div className="infoBlock">
           {isLoggedIn && (

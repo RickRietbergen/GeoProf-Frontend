@@ -8,7 +8,10 @@ const DaysOffComponent = () => {
         <div className="title">
           <p>Days Off</p>
         </div>
-        <button className="dots">
+        <button
+          className="dots"
+          onClick={() => (window.location.href = `/daysoff`)}
+        >
           <FontAwesomeIcon icon={faEllipsis} />
         </button>
       </div>

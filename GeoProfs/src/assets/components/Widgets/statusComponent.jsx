@@ -26,7 +26,6 @@ const StatusComponent = () => {
   return (
     <div
       className="statusComponent"
-      onClick={() => (window.location.href = `/status`)}
     >
       <DaysOffTop />
       <StatusComponentBottom />
@@ -40,7 +39,10 @@ const DaysOffTop = () => {
       <div className="title">
         <p>Status</p>
       </div>
-      <button className="dots">
+      <button
+        className="dots"
+        onClick={() => (window.location.href = `/status`)}
+      >
         <FontAwesomeIcon icon={faEllipsis} />
       </button>
     </div>
