@@ -1,15 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./statusPage.css";
 import "./dashboard.css";
-
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 import ConfirmedBlock from "../src/assets/components/Widgets/confirmedPage";
 import DeniedBlock from "../src/assets/components/Widgets/deniedPage";
 import PendingBlock from "../src/assets/components/Widgets/pendingPage";
+import useAuth from "./assets/components/Hooks/useAuth";
+import arrow from "../src/assets/arrow.png";
 
 function Dashboard() {
+  const { isLoggedIn, user, authFetch } = useAuth();
+  const [verlofData, setVerlofData] = useState(null);
   const [activeTab, setActiveTab] = useState("pending");
+
+  const fetchVerlof = () => {
+    authFetch("verlof", { method: "GET" })
+      .then((data) => {
+        setVerlofData(data);
+      })
+      .catch((error) => {
+        console.log("Error fetching verlof data:", error);
+      });
+  };
+
+  console.log(verlofData);
+
+  useEffect(() => {
+    if (!isLoggedIn) navigate("/login");
+
+    fetchVerlof();
+  }, []);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -59,13 +80,34 @@ function Dashboard() {
             </div>
           </div>
           <div className="block_down">
-            {activeTab === "pending" && (
-              <>
-                <PendingBlock />
-                <PendingBlock />
-                <PendingBlock />
-              </>
-            )}
+            {verlofData &&
+              verlofData.map((verlof) => {
+                return (
+                  <div className="pendingBlock item" key={verlof.id}>
+                    {activeTab === "pending" && (
+                      <div>
+                        <div className="pending_title">Pending</div>
+                        <div className="align_and_center">
+                          <div className="dateBlock">
+                            <div className="align-center">
+                              <div className="beginMonth">DEC</div>
+                              <div className="day">16</div>
+                              <div className="endMonth">TUE</div>
+                            </div>
+                            <img className="arrow" src={arrow}></img>
+                            <div className="align-center">
+                              <div className="beginMonth">DEC</div>
+                              <div className="day">30</div>
+                              <div className="endMonth">DEC</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })
+            }
             {activeTab === "confirmed" && (
               <>
                 <ConfirmedBlock />
