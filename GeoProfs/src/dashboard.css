@@ -346,6 +346,7 @@ select {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 81%;
   align-items: center;
 }
 
@@ -359,8 +360,10 @@ select {
 }
 .information {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 7px;
+  width: 68%;
 }
 
 .checkIcon {
@@ -372,6 +375,7 @@ select {
   color: #307746;
   border: none;
   padding: 2%;
+  width: 25%;
   font-weight: bold;
   border-radius: 5px;
   border: 2px solid #c6e9cd;
@@ -390,6 +394,8 @@ select {
   background-color: #f8e5c9;
   border: 2px solid #e9dbc8;
   font-weight: bold;
+  width: 25%;
+
   border-radius: 5px;
   padding: 2%;
 }
@@ -407,6 +413,8 @@ select {
   color: #621616;
   border: 2px solid #e6c5c3;
   font-weight: bold;
+  width: 25%;
+
   border-radius: 5px;
   padding: 2%;
 }
@@ -532,6 +540,15 @@ select {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.arrow_status {
+  width: auto;
+  height: 1rem;
 }
 /* ///////////////////////////////////////// */
 
