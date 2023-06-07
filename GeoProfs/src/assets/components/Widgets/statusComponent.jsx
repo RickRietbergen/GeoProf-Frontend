@@ -60,10 +60,16 @@ const StatusComponentBottom = ({ verlofData }) => {
           const fromDate = new Date(verlof.from);
           const fromDay = fromDate.getDate();
           const fromMonth = fromDate.toLocaleString("default", { month: "short" });
+          const fromWeekday = fromDate.toLocaleString("en-US", {
+            weekday: "short",
+          });
           
           const untilDate = new Date(verlof.until);
           const untilDay = untilDate.getDate();
           const untilMonth = untilDate.toLocaleString("default", { month: "short" });
+          const untilWeekday = untilDate.toLocaleString("en-US", {
+            weekday: "short",
+          });
 
           return (
             <div className="statusComponentBottom" key={verlof.id}>
@@ -71,8 +77,8 @@ const StatusComponentBottom = ({ verlofData }) => {
                 <div className="pending">
                   <div className="information" key={verlof.id}>
                     <FontAwesomeIcon className="clockIcon" icon={faClock} />
-                    <p className="date">{fromMonth.toUpperCase()} {fromDay}</p>
-                    <p className="date">{untilMonth.toUpperCase()} {untilDay}</p>
+                    <p className="date">{fromMonth.toUpperCase()} {fromDay} {fromWeekday}</p>
+                    <p className="date">{untilMonth.toUpperCase()} {untilDay} {untilWeekday}</p>
                   </div>
                   <button className="pendingButton">Pending</button>
                 </div>
@@ -84,8 +90,8 @@ const StatusComponentBottom = ({ verlofData }) => {
                       className="deniedIcon"
                       icon={faCircleXmark}
                     />
-                    <p className="date">{fromMonth.toUpperCase()} {fromDay}</p>
-                    <p className="date">{untilMonth.toUpperCase()} {untilDay}</p>
+                    <p className="date">{fromMonth.toUpperCase()} {fromDay} {fromWeekday}</p>
+                    <p className="date">{untilMonth.toUpperCase()} {untilDay} {untilWeekday}</p>
                   </div>
                   <button className="deniedButton">Rejected</button>
                 </div>
@@ -97,8 +103,8 @@ const StatusComponentBottom = ({ verlofData }) => {
                       className="checkIcon"
                       icon={faCircleCheck}
                     />
-                    <p className="date">{fromMonth.toUpperCase()} {fromDay}</p>
-                    <p className="date">{untilMonth.toUpperCase()} {untilDay}</p>
+                    <p className="date">{fromMonth.toUpperCase()} {fromDay} {fromWeekday}</p>
+                    <p className="date">{untilMonth.toUpperCase()} {untilDay} {untilWeekday}</p>
                   </div>
                   <button className="confirmedButton">Confirmed</button>
                 </div>
