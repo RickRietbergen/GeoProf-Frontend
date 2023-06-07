@@ -761,4 +761,51 @@ select {
     display: none;
   }
 }
-/* /////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////////// */
+
+.componentsBlock_manager {
+  display: flex;
+  flex-direction: column;
+}
+.manager_block_above,
+.manager_block_bottom {
+  height: 50%;
+  width: 85vw;
+}
+.manager_block_above {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.managers_blocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12%;
+  width: 20%;
+  height: 15rem;
+  background-color: white;
+  border: 3px solid #f3f3f3;
+  border-radius: 35px;
+}
+
+.managers_blocks_title {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #a8a8a8;
+  display: flex;
+  gap: 4%;
+  width: 100%;
+  justify-content: center;
+}
+.managers_blocks_number {
+  font-size: 8rem;
+  font-weight: bold;
+}
+.requestBlock {
+  width: 25%;
+  height: 20rem;
+  background-color: red;
+}
