@@ -74,10 +74,9 @@ const VerlofComponent = () => {
         );
         return;
       }
-
-      enqueueSnackbar("request submitted ", { variant: "success" });
-      navigate("/dashboard");
-    });
+    })
+    enqueueSnackbar("Request submitted.", { variant: "success" });
+    location.reload();
   };
 
   return (
