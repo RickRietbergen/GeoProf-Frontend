@@ -82,6 +82,16 @@ function Dashboard() {
           <div className="block_down">
             {verlofData &&
               verlofData.map((verlof) => {
+                const fromDate = new Date(verlof.from);
+                const fromDay = fromDate.getDate();
+                const fromMonth = fromDate.toLocaleString("default", {month: "short",});
+                const fromWeekday = fromDate.toLocaleString("en-US", {weekday: "short",});
+
+                const untilDate = new Date(verlof.until);
+                const untilDay = untilDate.getDate();
+                const untilMonth = untilDate.toLocaleString("default", {month: "short",});
+                const untilWeekday = untilDate.toLocaleString("en-US", {weekday: "short",});
+
                 if (verlof.isPending && !verlof.isDenied && !verlof.isApproved && activeTab === "pending") {
                   return (
                     <div className="pendingBlock item" key={verlof.id}>
@@ -89,15 +99,15 @@ function Dashboard() {
                       <div className="align_and_center">
                         <div className="dateBlock">
                           <div className="align-center">
-                            <div className="beginMonth">DEC</div>
-                            <div className="day">16</div>
-                            <div className="endMonth">TUE</div>
+                            <div className="beginMonth">{fromMonth}</div>
+                            <div className="day">{fromDay}</div>
+                            <div className="endMonth">{fromWeekday}</div>
                           </div>
                           <img className="arrow" src={arrow}></img>
                           <div className="align-center">
-                            <div className="beginMonth">DEC</div>
-                            <div className="day">30</div>
-                            <div className="endMonth">DEC</div>
+                            <div className="beginMonth">{untilMonth}</div>
+                            <div className="day">{untilDay}</div>
+                            <div className="endMonth">{untilWeekday}</div>
                           </div>
                         </div>
                       </div>
@@ -112,15 +122,15 @@ function Dashboard() {
                       <div className="align_and_center">
                         <div className="dateBlock">
                           <div className="align-center">
-                            <div className="beginMonth">DEC</div>
-                            <div className="day">16</div>
-                            <div className="endMonth">TUE</div>
+                            <div className="beginMonth">{fromMonth}</div>
+                            <div className="day">{fromDay}</div>
+                            <div className="endMonth">{fromWeekday}</div>
                           </div>
                           <img className="arrow" src={arrow}></img>
                           <div className="align-center">
-                            <div className="beginMonth">DEC</div>
-                            <div className="day">30</div>
-                            <div className="endMonth">DEC</div>
+                            <div className="beginMonth">{untilMonth}</div>
+                            <div className="day">{untilDay}</div>
+                            <div className="endMonth">{untilWeekday}</div>
                           </div>
                         </div>
                       </div>
@@ -135,15 +145,15 @@ function Dashboard() {
                       <div className="align_and_center">
                         <div className="dateBlock">
                           <div className="align-center">
-                            <div className="beginMonth">DEC</div>
-                            <div className="day">16</div>
-                            <div className="endMonth">TUE</div>
+                            <div className="beginMonth">{fromMonth}</div>
+                            <div className="day">{fromDay}</div>
+                            <div className="endMonth">{fromWeekday}</div>
                           </div>
-                          <img className="arrow" src={arrow} alt="Arrow" />
+                          <img className="arrow" src={arrow}></img>
                           <div className="align-center">
-                            <div className="beginMonth">DEC</div>
-                            <div className="day">30</div>
-                            <div className="endMonth">DEC</div>
+                            <div className="beginMonth">{untilMonth}</div>
+                            <div className="day">{untilDay}</div>
+                            <div className="endMonth">{untilWeekday}</div>
                           </div>
                         </div>
                       </div>
@@ -160,15 +170,15 @@ function Dashboard() {
                         <div className="align_and_center">
                           <div className="dateBlock">
                             <div className="align-center">
-                              <div className="beginMonth">DEC</div>
-                              <div className="day">16</div>
-                              <div className="endMonth">TUE</div>
+                              <div className="beginMonth">{fromMonth}</div>
+                              <div className="day">{fromDay}</div>
+                              <div className="endMonth">{fromWeekday}</div>
                             </div>
                             <img className="arrow" src={arrow}></img>
                             <div className="align-center">
-                              <div className="beginMonth">DEC</div>
-                              <div className="day">30</div>
-                              <div className="endMonth">DEC</div>
+                              <div className="beginMonth">{untilMonth}</div>
+                              <div className="day">{untilDay}</div>
+                              <div className="endMonth">{untilWeekday}</div>
                             </div>
                           </div>
                         </div>
@@ -183,15 +193,15 @@ function Dashboard() {
                         <div className="align_and_center">
                           <div className="dateBlock">
                             <div className="align-center">
-                              <div className="beginMonth">DEC</div>
-                              <div className="day">16</div>
-                              <div className="endMonth">TUE</div>
+                              <div className="beginMonth">{fromMonth}</div>
+                              <div className="day">{fromDay}</div>
+                              <div className="endMonth">{fromWeekday}</div>
                             </div>
                             <img className="arrow" src={arrow}></img>
                             <div className="align-center">
-                              <div className="beginMonth">DEC</div>
-                              <div className="day">30</div>
-                              <div className="endMonth">DEC</div>
+                              <div className="beginMonth">{untilMonth}</div>
+                              <div className="day">{untilDay}</div>
+                              <div className="endMonth">{untilWeekday}</div>
                             </div>
                           </div>
                         </div>
@@ -206,15 +216,15 @@ function Dashboard() {
                         <div className="align_and_center">
                           <div className="dateBlock">
                             <div className="align-center">
-                              <div className="beginMonth">DEC</div>
-                              <div className="day">16</div>
-                              <div className="endMonth">TUE</div>
+                              <div className="beginMonth">{fromMonth}</div>
+                              <div className="day">{fromDay}</div>
+                              <div className="endMonth">{fromWeekday}</div>
                             </div>
-                            <img className="arrow" src={arrow} alt="Arrow" />
+                            <img className="arrow" src={arrow}></img>
                             <div className="align-center">
-                              <div className="beginMonth">DEC</div>
-                              <div className="day">30</div>
-                              <div className="endMonth">DEC</div>
+                              <div className="beginMonth">{untilMonth}</div>
+                              <div className="day">{untilDay}</div>
+                              <div className="endMonth">{untilWeekday}</div>
                             </div>
                           </div>
                         </div>
