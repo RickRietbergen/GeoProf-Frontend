@@ -17,14 +17,13 @@ function Dashboard() {
   const fetchVerlof = () => {
     authFetch("verlof", { method: "GET" })
       .then((data) => {
-        setVerlofData(data);
+        const reversedData = data.reverse();
+        setVerlofData(reversedData);
       })
       .catch((error) => {
         console.log("Error fetching verlof data:", error);
       });
   };
-
-  // console.log(verlofData);
 
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
