@@ -16,7 +16,8 @@ const StatusComponent = () => {
     authFetch("verlof", { method: "GET" })
       .then((data) => {
         const lastThreeItems = data.slice(-3);
-        setVerlofData(lastThreeItems);
+        const reversedArray = lastThreeItems.reverse();
+        setVerlofData(reversedArray);
       })
       .catch((error) => {
         console.log("Error fetching verlof data:", error);
