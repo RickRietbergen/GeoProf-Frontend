@@ -24,7 +24,7 @@ function Dashboard() {
       });
   };
 
-  console.log(verlofData);
+  // console.log(verlofData);
 
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
@@ -82,10 +82,80 @@ function Dashboard() {
           <div className="block_down">
             {verlofData &&
               verlofData.map((verlof) => {
-                return (
-                  <div className="pendingBlock item" key={verlof.id}>
-                    {activeTab === "pending" && (
-                      <div>
+                if (verlof.isPending && !verlof.isDenied && !verlof.isApproved && activeTab === "pending") {
+                  return (
+                    <div className="pendingBlock item" key={verlof.id}>
+                      <div className="pending_title">Pending</div>
+                      <div className="align_and_center">
+                        <div className="dateBlock">
+                          <div className="align-center">
+                            <div className="beginMonth">DEC</div>
+                            <div className="day">16</div>
+                            <div className="endMonth">TUE</div>
+                          </div>
+                          <img className="arrow" src={arrow}></img>
+                          <div className="align-center">
+                            <div className="beginMonth">DEC</div>
+                            <div className="day">30</div>
+                            <div className="endMonth">DEC</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (!verlof.isPending && verlof.isDenied && !verlof.isApproved && activeTab === "denied") {
+                  return (
+                    <div className="deniedBlock item" key={verlof.id}>
+                      <div className="denied_title">Denied</div>
+                      <div className="align_and_center">
+                        <div className="dateBlock">
+                          <div className="align-center">
+                            <div className="beginMonth">DEC</div>
+                            <div className="day">16</div>
+                            <div className="endMonth">TUE</div>
+                          </div>
+                          <img className="arrow" src={arrow}></img>
+                          <div className="align-center">
+                            <div className="beginMonth">DEC</div>
+                            <div className="day">30</div>
+                            <div className="endMonth">DEC</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (!verlof.isPending && !verlof.isDenied && verlof.isApproved && activeTab === "confirmed") {
+                  return (
+                    <div className="confirmedBlock item" key={verlof.id}>
+                      <div className="confirmed_title">Confirmed</div>
+                      <div className="align_and_center">
+                        <div className="dateBlock">
+                          <div className="align-center">
+                            <div className="beginMonth">DEC</div>
+                            <div className="day">16</div>
+                            <div className="endMonth">TUE</div>
+                          </div>
+                          <img className="arrow" src={arrow} alt="Arrow" />
+                          <div className="align-center">
+                            <div className="beginMonth">DEC</div>
+                            <div className="day">30</div>
+                            <div className="endMonth">DEC</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+
+                if (activeTab === "all") {
+                  if (verlof.isPending){
+                    return (
+                      <div className="pendingBlock item" key={verlof.id}>
                         <div className="pending_title">Pending</div>
                         <div className="align_and_center">
                           <div className="dateBlock">
@@ -103,40 +173,57 @@ function Dashboard() {
                           </div>
                         </div>
                       </div>
-                    )}
-                  </div>
-                );
+                    );
+                  }
+                  
+                  if (verlof.isDenied){
+                    return (
+                      <div className="deniedBlock item" key={verlof.id}>
+                        <div className="denied_title">Denied</div>
+                        <div className="align_and_center">
+                          <div className="dateBlock">
+                            <div className="align-center">
+                              <div className="beginMonth">DEC</div>
+                              <div className="day">16</div>
+                              <div className="endMonth">TUE</div>
+                            </div>
+                            <img className="arrow" src={arrow}></img>
+                            <div className="align-center">
+                              <div className="beginMonth">DEC</div>
+                              <div className="day">30</div>
+                              <div className="endMonth">DEC</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                  
+                  if (verlof.isApproved){
+                    return (
+                      <div className="confirmedBlock item" key={verlof.id}>
+                        <div className="confirmed_title">Confirmed</div>
+                        <div className="align_and_center">
+                          <div className="dateBlock">
+                            <div className="align-center">
+                              <div className="beginMonth">DEC</div>
+                              <div className="day">16</div>
+                              <div className="endMonth">TUE</div>
+                            </div>
+                            <img className="arrow" src={arrow} alt="Arrow" />
+                            <div className="align-center">
+                              <div className="beginMonth">DEC</div>
+                              <div className="day">30</div>
+                              <div className="endMonth">DEC</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                }
               })
             }
-            {activeTab === "confirmed" && (
-              <>
-                <ConfirmedBlock />
-                <ConfirmedBlock />
-                <ConfirmedBlock />
-              </>
-            )}
-            {activeTab === "denied" && (
-              <>
-                <DeniedBlock />
-                <DeniedBlock />
-                <DeniedBlock />
-                <DeniedBlock />
-              </>
-            )}
-            {activeTab === "all" && (
-              <>
-                <PendingBlock />
-                <PendingBlock />
-                <PendingBlock />
-                <ConfirmedBlock />
-                <ConfirmedBlock />
-                <ConfirmedBlock />
-                <DeniedBlock />
-                <DeniedBlock />
-                <DeniedBlock />
-                <DeniedBlock />
-              </>
-            )}
           </div>
         </div>
       </div>
