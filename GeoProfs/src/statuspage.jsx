@@ -9,6 +9,7 @@ import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 // import Requestblock from "./assets/components/Widgets/requestBlock";
 import useAuth from "./assets/components/Hooks/useAuth";
 import arrow from "../src/assets/arrow.png";
+import RequestBlock from "./assets/components/Widgets/requestBlock";
 
 function Dashboard() {
   const { isLoggedIn, user, authFetch } = useAuth();
@@ -257,15 +258,15 @@ function Dashboard() {
               })}
           </div>
           {/* <div className="requestBlocks_status">
-            <Requestblock />
-            <Requestblock />
-            <Requestblock />
-            <Requestblock />
-            <Requestblock />
-            <Requestblock />
-            <Requestblock />
-            <Requestblock />
-            <Requestblock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
           </div> */}
         </div>
       </div>
