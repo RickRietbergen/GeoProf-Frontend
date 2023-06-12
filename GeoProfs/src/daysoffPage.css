@@ -1,6 +1,6 @@
 .colleague_block {
   height: 11rem;
-  width: 22rem;
+  width: 17rem;
   background-color: white;
 }
 .colleague_block_top {
@@ -21,10 +21,11 @@
   border-radius: 100%;
 }
 .img_text {
-  width: 68%;
+  width: 87%;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  height: 6rem;
 }
 .bold {
   font-weight: bold;

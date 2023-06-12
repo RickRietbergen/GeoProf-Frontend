@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./statusPage.css";
 import "./dashboard.css";
 import "./daysoffPage.css";
+import DaysOffComponent from "../src/assets/components/Widgets/daysOffPage";
 import profilePicture from "./assets/profile.jpg";
 import arrow from "../src/assets/arrow.png";
 import SideNav from "./assets/components/Widgets/sideNav";
@@ -45,6 +46,10 @@ function Dashboard() {
           </div>
 
           <div className="block_down">
+            {/* <DaysOffComponent />
+            <DaysOffComponent />
+            <DaysOffComponent />
+            <DaysOffComponent /> */}
             {verlofData &&
               verlofData.map((verlof) => {
                 const fromDate = new Date(verlof.from);
