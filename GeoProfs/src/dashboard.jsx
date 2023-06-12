@@ -1,13 +1,18 @@
+import React from "react";
 import "./dashboard.css";
-
 import SideNav from "./assets/components/Widgets/sideNav";
-import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
+import Smallernav from "./assets/components/Widgets/smallerSideNav";
 import UserDashboard from "./assets/components/userDashboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import RequestBlock from "./assets/components/Widgets/requestBlock";
 import {
   faUsers,
   faClock,
   faEnvelope,
+  faCheck,
+  faXmark,
+  faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Dashboard() {
@@ -41,10 +46,17 @@ function Dashboard() {
           </div>
         </div>
         <div className="manager_block_bottom">
-          <div className="requestBlock">
-            <div></div>
-            <div></div>
-            <div></div>
+          <div className="titleName">
+            Recent Requests
+            <button className="dotsMore">
+              <FontAwesomeIcon icon={faEllipsis} />
+            </button>
+          </div>
+          <div className="requestBlocks">
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
+            <RequestBlock />
           </div>
         </div>
       </div>

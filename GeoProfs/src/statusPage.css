@@ -9,7 +9,7 @@
 
 .title_block {
   flex-direction: column;
-  height: 20%;
+  height: 13%;
   width: 77vw;
   font-size: 4rem;
   font-weight: bold;
@@ -121,4 +121,14 @@
   color: white;
   background-color: #ffb906;
   cursor: pointer;
+}
+.requestBlocks_status {
+  display: flex;
+  padding: 0 3%;
+  gap: 2.4%;
+  row-gap: 4%;
+  flex-wrap: wrap;
+  height: 100%;
+  max-height: 43rem;
+  overflow-y: auto;
 }

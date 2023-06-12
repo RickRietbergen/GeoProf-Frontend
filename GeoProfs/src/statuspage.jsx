@@ -7,7 +7,7 @@ import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 import ConfirmedBlock from "../src/assets/components/Widgets/confirmedPage";
 import DeniedBlock from "../src/assets/components/Widgets/deniedPage";
 import PendingBlock from "../src/assets/components/Widgets/pendingPage";
-
+import Requestblock from "./assets/components/Widgets/requestBlock";
 function Dashboard() {
   const [activeTab, setActiveTab] = useState("pending");
 
@@ -23,7 +23,7 @@ function Dashboard() {
         <div className="block">
           <div className="title_block">
             <p>Status</p>
-            <div className="tab-container">
+            {/* <div className="tab-container">
               <button
                 className={`filterButton ${
                   activeTab === "pending" ? "selectedButton" : ""
@@ -94,7 +94,18 @@ function Dashboard() {
                 <DeniedBlock />
                 <DeniedBlock />
               </>
-            )}
+            )} */}
+          </div>
+          <div className="requestBlocks_status">
+            <Requestblock />
+            <Requestblock />
+            <Requestblock />
+            <Requestblock />
+            <Requestblock />
+            <Requestblock />
+            <Requestblock />
+            <Requestblock />
+            <Requestblock />
           </div>
         </div>
       </div>
