@@ -27,7 +27,7 @@ const Navbar = ({ value }) => {
             <>
               <img className="profilePicture" src={profilePicture} alt="" />
               <p className="name">{user.username}</p>
-              <p className="function">functie</p>
+              <p className="function">{user.afdelingnaam}</p>
             </>
           )}
         </div>
