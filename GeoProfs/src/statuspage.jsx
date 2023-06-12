@@ -3,10 +3,10 @@ import "./statusPage.css";
 import "./dashboard.css";
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
-import ConfirmedBlock from "../src/assets/components/Widgets/confirmedPage";
-import DeniedBlock from "../src/assets/components/Widgets/deniedPage";
-import PendingBlock from "../src/assets/components/Widgets/pendingPage";
-import Requestblock from "./assets/components/Widgets/requestBlock";
+// import ConfirmedBlock from "../src/assets/components/Widgets/confirmedPage";
+// import DeniedBlock from "../src/assets/components/Widgets/deniedPage";
+// import PendingBlock from "../src/assets/components/Widgets/pendingPage";
+// import Requestblock from "./assets/components/Widgets/requestBlock";
 import useAuth from "./assets/components/Hooks/useAuth";
 import arrow from "../src/assets/arrow.png";
 

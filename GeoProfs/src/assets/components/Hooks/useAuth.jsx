@@ -11,6 +11,8 @@ const useAuth = () => {
   const vakantie = window.localStorage.getItem("vakantie");
   const ziek = window.localStorage.getItem("ziek");
   const id = window.localStorage.getItem("id");
+  const role = window.localStorage.getItem("role");
+  const afdelingnaam = window.localStorage.getItem("afdelingnaam");
 
   const authFetch = (url, body, useCustomUrl) => {
     const token = window.localStorage.getItem("token");
@@ -39,6 +41,8 @@ const useAuth = () => {
       vakantie,
       ziek,
       id,
+      role,
+      afdelingnaam,
     },
     authFetch,
   };
