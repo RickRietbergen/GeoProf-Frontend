@@ -138,6 +138,9 @@ const StatusComponentBottom = ({ verlofData }) => {
                   <button className="confirmedButton">Confirmed</button>
                 </div>
               )}
+              {!verlof.isPending && !verlof.isDenied && !verlof.isApproved &&
+                <p>No data available</p>
+              }
             </div>
           );
         })}

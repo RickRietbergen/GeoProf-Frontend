@@ -4,7 +4,7 @@ import Status from "./assets/components/Widgets/statusComponent";
 import VerlofComponent from "./assets/components/Widgets/request";
 import DaysOff from "../src/assets/components/Widgets/daysOff";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import ColleagueDayOff from "./assets/components/Widgets/ColleaguesDaysOff";
+import ColleagueDayOff from "../src/assets/components/Widgets/ColleaguesDaysOff.jsx";
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 
