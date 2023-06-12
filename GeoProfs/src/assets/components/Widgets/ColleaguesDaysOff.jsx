@@ -24,6 +24,7 @@ const ColleagueDayOffBlock = () => {
 
     fetchVerlof();
   }, []);
+
   return (
     <div className="colleaguesDaysOffBlock_block">
       {verlofData && verlofData.length !== 0 ? (
@@ -49,7 +50,7 @@ const ColleagueDayOffBlock = () => {
                 <img className="logo_colleague" src={profilePicture} alt="" />
                 <div>
                   <p className="colleague_name">{verlof.username}</p>
-                  <p className="colleague_function">functie</p>
+                  <p className="colleague_function">{user && user.afdelingnaam}</p>
                 </div>
               </div>
               <div className="colleagueDayOffBlock_right">
