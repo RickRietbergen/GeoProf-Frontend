@@ -45,7 +45,25 @@ function Dashboard() {
             <div className="managers_blocks_number">20</div>
           </div>
         </div>
-        <div className="manager_block_bottom">
+        <div className="right">
+          <div className="colleaguesDaysOffBlock">
+            <div className="colleaguesDaysOffBlock_top">
+              <div className="title">
+                <p>Colleagues Days Off </p>
+              </div>
+              <button
+                className="dots"
+                onClick={() => (window.location.href = `/daysoff`)}
+              >
+                <FontAwesomeIcon icon={faEllipsis} />
+              </button>
+            </div>
+            <div>
+              <ColleagueDayOff />
+            </div>
+          </div>
+        </div>
+        {/* <div className="manager_block_bottom">
           <div className="titleName">
             Recent Requests
             <button className="dotsMore">
@@ -58,7 +76,7 @@ function Dashboard() {
             <RequestBlock />
             <RequestBlock />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
