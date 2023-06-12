@@ -67,6 +67,8 @@ function App() {
         window.localStorage.setItem("vakantie", json.vakantie);
         window.localStorage.setItem("ziek", json.ziek);
         window.localStorage.setItem("id", json.id);
+        window.localStorage.setItem("role", json.role);
+        window.localStorage.setItem("afdelingnaam", json.afdelingnaam);
 
         if (ok) {
           closeSnackbar();
