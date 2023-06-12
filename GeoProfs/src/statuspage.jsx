@@ -23,7 +23,7 @@ function Dashboard() {
         <div className="block">
           <div className="title_block">
             <p>Status</p>
-            {/* <div className="tab-container">
+            <div className="tab-container">
               <button
                 className={`filterButton ${
                   activeTab === "pending" ? "selectedButton" : ""
@@ -94,9 +94,9 @@ function Dashboard() {
                 <DeniedBlock />
                 <DeniedBlock />
               </>
-            )} */}
+            )}
           </div>
-          <div className="requestBlocks_status">
+          {/* <div className="requestBlocks_status">
             <Requestblock />
             <Requestblock />
             <Requestblock />
@@ -106,7 +106,7 @@ function Dashboard() {
             <Requestblock />
             <Requestblock />
             <Requestblock />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
