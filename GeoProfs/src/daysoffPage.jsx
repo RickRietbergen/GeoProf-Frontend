@@ -23,17 +23,12 @@ function Dashboard() {
         console.log("Error fetching verlof data:", error);
       });
   };
-  console.log(verlofData);
 
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
 
     fetchVerlof();
   }, []);
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
 
   return (
     <div className="background">
@@ -46,10 +41,6 @@ function Dashboard() {
           </div>
 
           <div className="block_down">
-            {/* <DaysOffComponent />
-            <DaysOffComponent />
-            <DaysOffComponent />
-            <DaysOffComponent /> */}
             {verlofData &&
               verlofData.map((verlof) => {
                 const fromDate = new Date(verlof.from);
@@ -77,7 +68,7 @@ function Dashboard() {
                         <img className="daysOffPicture" src={profilePicture}></img>
                         <div>
                           <p className="bold">{verlof.username}</p>
-                          <p className="function_daysOff">CEO</p>
+                          <p className="function_daysOff">{verlof.afdelingsnaam}</p>
                         </div>
                       </div>
                     </div>
