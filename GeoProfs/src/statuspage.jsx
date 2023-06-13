@@ -346,8 +346,11 @@ function Dashboard() {
                           </div>
                         </div>
                       );
+                    } else {
+                      <p>No data available</p>;
                     }
-                  })}
+                  })
+                }
               </div>
             ))
           }

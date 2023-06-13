@@ -61,34 +61,38 @@ function Dashboard() {
                   weekday: "short",
                 });
 
-                return(
-                  <div className="colleague_block" key={verlof.id}>
-                    <div className="colleague_block_top">
-                      <div className="img_text">
-                        <img className="daysOffPicture" src={profilePicture}></img>
-                        <div>
-                          <p className="bold">{verlof.username}</p>
-                          <p className="function_daysOff">{verlof.afdelingsnaam}</p>
+                if (!verlof.isPending && !verlof.isDenied && verlof.isApproved) {
+                  return(
+                    <div className="colleague_block" key={verlof.id}>
+                      <div className="colleague_block_top">
+                        <div className="img_text">
+                          <img className="daysOffPicture" src={profilePicture}></img>
+                          <div>
+                            <p className="bold">{verlof.username}</p>
+                            <p className="function_daysOff">{verlof.afdelingsnaam}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="colleague_block_bottom">
+                        <div className="dateBlock">
+                          <div className="align-center">
+                            <div className="beginMonth">{fromMonth}</div>
+                            <div className="day">{fromDay}</div>
+                            <div className="endMonth">{fromWeekday}</div>
+                          </div>
+                          <img className="arrow" src={arrow}></img>
+                          <div className="align-center">
+                            <div className="beginMonth">{untilMonth}</div>
+                            <div className="day">{untilDay}</div>
+                            <div className="endMonth">{untilWeekday}</div>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="colleague_block_bottom">
-                      <div className="dateBlock">
-                        <div className="align-center">
-                          <div className="beginMonth">{fromMonth}</div>
-                          <div className="day">{fromDay}</div>
-                          <div className="endMonth">{fromWeekday}</div>
-                        </div>
-                        <img className="arrow" src={arrow}></img>
-                        <div className="align-center">
-                          <div className="beginMonth">{untilMonth}</div>
-                          <div className="day">{untilDay}</div>
-                          <div className="endMonth">{untilWeekday}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
+                  );
+                } else {
+                  <p>No data available</p>;
+                }
               })
             }
           </div>
