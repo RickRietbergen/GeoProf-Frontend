@@ -3,13 +3,15 @@ import "./statusPage.css";
 import "./dashboard.css";
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
-// import ConfirmedBlock from "../src/assets/components/Widgets/confirmedPage";
-// import DeniedBlock from "../src/assets/components/Widgets/deniedPage";
-// import PendingBlock from "../src/assets/components/Widgets/pendingPage";
-// import Requestblock from "./assets/components/Widgets/requestBlock";
 import useAuth from "./assets/components/Hooks/useAuth";
 import arrow from "../src/assets/arrow.png";
-import RequestBlock from "./assets/components/Widgets/requestBlock";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faClock,
+  faCheck,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+import profilePicture from "../src/assets/profile.jpg";
 
 function Dashboard() {
   const { isLoggedIn, user, authFetch } = useAuth();
@@ -43,44 +45,47 @@ function Dashboard() {
       <Smallernav className="smallNav" />
       <div className="componentsBlock">
         <div className="block">
-          <div className="title_block">
-            <p>Status</p>
-            <div className="tab-container">
-              <button
-                className={`filterButton ${
-                  activeTab === "pending" ? "selectedButton" : ""
-                }`}
-                onClick={() => handleTabChange("pending")}
-              >
-                Pending
-              </button>
-              <button
-                className={`filterButton ${
-                  activeTab === "confirmed" ? "selectedButton" : ""
-                }`}
-                onClick={() => handleTabChange("confirmed")}
-              >
-                Confirmed
-              </button>
-              <button
-                className={`filterButton ${
-                  activeTab === "denied" ? "selectedButton" : ""
-                }`}
-                onClick={() => handleTabChange("denied")}
-              >
-                Denied
-              </button>
-              <button
-                className={`filterButton ${
-                  activeTab === "all" ? "selectedButton" : ""
-                }`}
-                onClick={() => handleTabChange("all")}
-              >
-                All
-              </button>
+          {user.role == 1 ? 
+            <div className="title_block">
+              <p>Status</p>
+              <div className="tab-container">
+                <button
+                  className={`filterButton ${
+                    activeTab === "pending" ? "selectedButton" : ""
+                  }`}
+                  onClick={() => handleTabChange("pending")}
+                >
+                  Pending
+                </button>
+                <button
+                  className={`filterButton ${
+                    activeTab === "confirmed" ? "selectedButton" : ""
+                  }`}
+                  onClick={() => handleTabChange("confirmed")}
+                >
+                  Confirmed
+                </button>
+                <button
+                  className={`filterButton ${
+                    activeTab === "denied" ? "selectedButton" : ""
+                  }`}
+                  onClick={() => handleTabChange("denied")}
+                >
+                  Denied
+                </button>
+                <button
+                  className={`filterButton ${
+                    activeTab === "all" ? "selectedButton" : ""
+                  }`}
+                  onClick={() => handleTabChange("all")}
+                >
+                  All
+                </button>
+              </div>
             </div>
-          </div>
-          {user.role == 1 &&
+          : null
+          }
+          {user.role == 1 && (
             <div className="block_down">
               {verlofData &&
                 verlofData.map((verlof) => {
@@ -256,22 +261,95 @@ function Dashboard() {
                       );
                     }
                   }
-                })
-              }
+                })}
             </div>
-          }
-          {user.role == 2 || user.role == 4 &&
-            <div className="requestBlocks_status">
-              <RequestBlock />
-              <RequestBlock />
-              <RequestBlock />
-              <RequestBlock />
-              <RequestBlock />
-              <RequestBlock />
-              <RequestBlock />
-              <RequestBlock />
-              <RequestBlock />
-            </div> 
+          )}
+          {user.role == 2 ||
+            (user.role == 4 && (
+              <div className="requestBlocks_status">
+                {verlofData &&
+                  verlofData.map((verlof) => {
+                    const fromDate = new Date(verlof.from);
+                    const fromDay = fromDate.getDate();
+                    const fromMonth = fromDate.toLocaleString("default", {
+                      month: "short",
+                    });
+                    const fromWeekday = fromDate.toLocaleString("en-US", {
+                      weekday: "short",
+                    });
+
+                    const untilDate = new Date(verlof.until);
+                    const untilDay = untilDate.getDate();
+                    const untilMonth = untilDate.toLocaleString("default", {
+                      month: "short",
+                    });
+                    const untilWeekday = untilDate.toLocaleString("en-US", {
+                      weekday: "short",
+                    });
+
+                    if (verlof.isPending && !verlof.isDenied && !verlof.isApproved) {
+                      return (
+                        <div className="requestBlock" key={verlof.id}>
+                          <div className="employee_block_top">
+                            <div className="img_text">
+                              <img
+                                className="daysOffPicture"
+                                src={profilePicture}
+                                alt="Profile"
+                              />
+                              <div>
+                                <p className="bold">{verlof.username}</p>
+                                <p className="function_daysOff">
+                                  {verlof.afdelingsnaam}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="dateBlock">
+                            <div className="align-center">
+                              <div className="beginMonth">{fromMonth}</div>
+                              <div className="day">{fromDay}</div>
+                              <div className="endMonth">{fromWeekday}</div>
+                            </div>
+                            <img className="arrow" src={arrow} alt="Arrow" />
+                            <div className="align-center">
+                              <div className="beginMonth">{untilMonth}</div>
+                              <div className="day">{untilDay}</div>
+                              <div className="endMonth">{untilWeekday}</div>
+                            </div>
+                          </div>
+                          <div className="textBlock">
+                            <div className="textBlock_top">
+                              <p className="reason_block">
+                                Reason: {verlof.verlofReden}
+                              </p>
+                              <p className="reason_block">
+                                {verlof.beschrijving}
+                              </p>
+                            </div>
+                            <div className="textBlock_bottom">
+                              <div className="submission_date">
+                                <FontAwesomeIcon icon={faClock} />
+                                <p>
+                                  date of request <span>15 aug</span>
+                                </p>
+                              </div>
+                              <div className="acceptDeclineButtons">
+                                <div className="accept">
+                                  <FontAwesomeIcon icon={faCheck} />
+                                </div>
+                                <div className="decline">
+                                  <FontAwesomeIcon icon={faTimes} />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                  })}
+              </div>
+            ))
           }
         </div>
       </div>

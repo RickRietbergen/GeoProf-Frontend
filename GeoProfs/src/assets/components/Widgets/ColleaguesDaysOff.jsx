@@ -47,10 +47,10 @@ const ColleagueDayOffBlock = () => {
           return (
             <div className="colleagueDayOffBlock" key={verlof.id}>
               <div className="colleagueDayOffBlock_left">
-                <img className="logo_colleague" src={profilePicture} alt="" />
+                <img className="logo_colleague" src={profilePicture} alt="logo" />
                 <div>
                   <p className="colleague_name">{verlof.username}</p>
-                  <p className="colleague_function">{user && user.afdelingnaam}</p>
+                  <p className="colleague_function">{verlof.afdelingsnaam}</p>
                 </div>
               </div>
               <div className="colleagueDayOffBlock_right">

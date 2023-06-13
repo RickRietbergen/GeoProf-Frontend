@@ -76,7 +76,9 @@ const VerlofComponent = () => {
       }
     })
     enqueueSnackbar("Request submitted.", { variant: "success" });
-    location.reload();
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   };
 
   return (
