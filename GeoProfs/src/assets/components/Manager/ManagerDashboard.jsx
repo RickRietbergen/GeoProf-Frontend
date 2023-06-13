@@ -20,8 +20,8 @@ const ManagerComponent = () => {
   const fetchVerlof = () => {
     authFetch("verlof", { method: "GET" })
       .then((data) => {
-        const lastThreeItems = data.slice(-3);
-        const reversedArray = lastThreeItems.reverse();
+        const lastFourItems = data.slice(-4);
+        const reversedArray = lastFourItems.reverse();
         setVerlofData(reversedArray);
       })
       .catch((error) => {
