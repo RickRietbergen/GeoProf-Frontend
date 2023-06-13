@@ -12,11 +12,14 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../src/assets/profile.jpg";
+import { useSnackbar } from "notistack";
 
 function Dashboard() {
   const { isLoggedIn, user, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
   const [activeTab, setActiveTab] = useState("pending");
+  const { enqueueSnackbar } = useSnackbar();
+  const [id, setId] = useState('');
 
   const fetchVerlof = () => {
     authFetch("verlof", { method: "GET" })
@@ -29,11 +32,38 @@ function Dashboard() {
       });
   };
 
+  const fetchDeniedVerlof = (id) => {
+    authFetch(`Status/denied/${id}`, {
+			method: "PUT",
+			Headers: {
+				"Content-Type": "application/json",
+			},
+		})
+      .then((response) => {
+        if (response.ok) {
+          enqueueSnackbar("Verlof status has successfully been changed to 'Denied'", { variant: "success" });
+          setTimeout(() => {
+            location.reload();
+          }, 1000);
+        } else { 
+          enqueueSnackbar("Error occured while trying to change verlof to 'Denied'", { variant: "error" });
+        }
+      })
+      .catch((error) => {
+        console.log("Error occurred while trying to change verlof to 'Denied':", error);
+      });
+  };
+
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
 
     fetchVerlof();
   }, []);
+
+  const handleDenyVerlof = (verlof) => {
+    setId(verlof.id);
+    fetchDeniedVerlof(verlof.id);
+  };
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -338,7 +368,10 @@ function Dashboard() {
                                 <div className="accept">
                                   <FontAwesomeIcon icon={faCheck} />
                                 </div>
-                                <div className="decline">
+                                <div
+                                  className="decline"
+                                  onClick={() => handleDenyVerlof(verlof)}
+                                >
                                   <FontAwesomeIcon icon={faTimes} />
                                 </div>
                               </div>
