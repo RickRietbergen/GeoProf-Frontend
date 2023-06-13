@@ -6,11 +6,7 @@ import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 import useAuth from "./assets/components/Hooks/useAuth";
 import arrow from "../src/assets/arrow.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClock,
-  faCheck,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faClock, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../src/assets/profile.jpg";
 
 function Dashboard() {
@@ -45,9 +41,11 @@ function Dashboard() {
       <Smallernav className="smallNav" />
       <div className="componentsBlock">
         <div className="block">
-          {user.role == 1 ? 
-            <div className="title_block">
-              <p>Status</p>
+          <div className="title_block">
+            <p>Status</p>
+          </div>
+          {user.role == 1 ? (
+            <div>
               <div className="tab-container">
                 <button
                   className={`filterButton ${
@@ -83,8 +81,7 @@ function Dashboard() {
                 </button>
               </div>
             </div>
-          : null
-          }
+          ) : null}
           {user.role == 1 && (
             <div className="block_down">
               {verlofData &&
@@ -287,7 +284,11 @@ function Dashboard() {
                       weekday: "short",
                     });
 
-                    if (verlof.isPending && !verlof.isDenied && !verlof.isApproved) {
+                    if (
+                      verlof.isPending &&
+                      !verlof.isDenied &&
+                      !verlof.isApproved
+                    ) {
                       return (
                         <div className="requestBlock" key={verlof.id}>
                           <div className="employee_block_top">
@@ -297,9 +298,9 @@ function Dashboard() {
                                 src={profilePicture}
                                 alt="Profile"
                               />
-                              <div>
+                              <div className="daysOffInfo">
                                 <p className="bold">{verlof.username}</p>
-                                <p className="function_daysOff">
+                                <p className="function_daysOff ">
                                   {verlof.afdelingsnaam}
                                 </p>
                               </div>
@@ -349,11 +350,9 @@ function Dashboard() {
                     } else {
                       <p>No data available</p>;
                     }
-                  })
-                }
+                  })}
               </div>
-            ))
-          }
+            ))}
         </div>
       </div>
     </div>

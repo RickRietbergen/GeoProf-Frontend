@@ -34,7 +34,7 @@ const ManagerComponent = () => {
 
     fetchVerlof();
   }, []);
-  
+
   return (
     <div className="componentsBlock componentsBlock_manager">
       <div className="manager_block_above">
@@ -101,9 +101,11 @@ const ManagerComponent = () => {
                         src={profilePicture}
                         alt="Profile"
                       />
-                      <div>
+                      <div className="daysOffInfo">
                         <p className="bold">{verlof.username}</p>
-                        <p className="function_daysOff">{verlof.afdelingsnaam}</p>
+                        <p className="function_daysOff">
+                          {verlof.afdelingsnaam}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -125,17 +127,9 @@ const ManagerComponent = () => {
                       <p className="reason_block">
                         Reason: {verlof.verlofReden}
                       </p>
-                      <p className="reason_block">
-                        {verlof.beschrijving}
-                      </p>
+                      <p className="reason_block">{verlof.beschrijving}</p>
                     </div>
                     <div className="textBlock_bottom">
-                      <div className="submission_date">
-                        <FontAwesomeIcon icon={faClock} />
-                        <p>
-                          date of request <span>15 aug</span>
-                        </p>
-                      </div>
                       <div className="acceptDeclineButtons">
                         <div className="accept">
                           <FontAwesomeIcon icon={faCheck} />
@@ -148,8 +142,7 @@ const ManagerComponent = () => {
                   </div>
                 </div>
               );
-            })
-          }
+            })}
         </div>
       </div>
     </div>
