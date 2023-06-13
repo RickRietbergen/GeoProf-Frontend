@@ -28,7 +28,10 @@ const UserDashboard = () => {
             <div className="title">
               <p>Colleagues Days Off </p>
             </div>
-            <button className="dots">
+            <button
+              className="dots"
+              onClick={() => (window.location.href = `/daysoff`)}
+            >
               <FontAwesomeIcon icon={faEllipsis} />
             </button>
           </div>
