@@ -34,24 +34,15 @@ function Dashboard() {
 
   const fetchDeniedVerlof = (id) => {
     authFetch(`Status/denied/${id}`, {
-			method: "PUT",
-			Headers: {
-				"Content-Type": "application/json",
-			},
-		})
-      .then((response) => {
-        if (response.ok) {
-          enqueueSnackbar("Verlof status has successfully been changed to 'Denied'", { variant: "success" });
-          setTimeout(() => {
-            location.reload();
-          }, 1000);
-        } else { 
-          enqueueSnackbar("Error occured while trying to change verlof to 'Denied'", { variant: "error" });
-        }
-      })
-      .catch((error) => {
-        console.log("Error occurred while trying to change verlof to 'Denied':", error);
-      });
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    enqueueSnackbar("Verlof status has successfully been changed to 'Denied'", { variant: "success" });
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   };
 
   useEffect(() => {
