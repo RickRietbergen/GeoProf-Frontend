@@ -44,6 +44,21 @@ function Dashboard() {
       location.reload();
     }, 1000);
   };
+  
+  const fetchApprovedVerlof = (id) => {
+    authFetch(`Status/approved/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    enqueueSnackbar("Verlof status has successfully been changed to 'Approved'", {
+      variant: "success",
+    });
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
+  };
 
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
@@ -54,6 +69,11 @@ function Dashboard() {
   const handleDenyVerlof = (verlof) => {
     setId(verlof.id);
     fetchDeniedVerlof(verlof.id);
+  };
+  
+  const handleApproveVerlof = (verlof) => {
+    setId(verlof.id);
+    fetchApprovedVerlof(verlof.id);
   };
 
   const handleTabChange = (tab) => {
@@ -356,7 +376,10 @@ function Dashboard() {
                                 </p>
                               </div>
                               <div className="acceptDeclineButtons">
-                                <div className="accept">
+                                <div
+                                  className="accept"
+                                  onClick={() => handleApproveVerlof(verlof)}
+                                >
                                   <FontAwesomeIcon icon={faCheck} />
                                 </div>
                                 <div
