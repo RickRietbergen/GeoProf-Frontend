@@ -6,11 +6,7 @@ import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 import useAuth from "./assets/components/Hooks/useAuth";
 import arrow from "../src/assets/arrow.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClock,
-  faCheck,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faClock, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../src/assets/profile.jpg";
 import { useSnackbar } from "notistack";
 
@@ -19,7 +15,7 @@ function Dashboard() {
   const [verlofData, setVerlofData] = useState(null);
   const [activeTab, setActiveTab] = useState("pending");
   const { enqueueSnackbar } = useSnackbar();
-  const [id, setId] = useState('');
+  const [id, setId] = useState("");
 
   const fetchVerlof = () => {
     authFetch("verlof", { method: "GET" })
@@ -38,26 +34,25 @@ function Dashboard() {
       headers: {
         "Content-Type": "application/json",
       },
-    })
-    enqueueSnackbar("Verlof status has successfully been changed to 'Denied'", { variant: "success" });
-    setTimeout(() => {
-      location.reload();
-    }, 1000);
+    }).catch(() => fetchVerlof());
+    enqueueSnackbar("Verlof status has successfully been changed to 'Denied'", {
+      variant: "success",
+    });
   };
-  
+
   const fetchApprovedVerlof = (id) => {
     authFetch(`Status/approved/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-    });
-    enqueueSnackbar("Verlof status has successfully been changed to 'Approved'", {
-      variant: "success",
-    });
-    setTimeout(() => {
-      location.reload();
-    }, 1000);
+    }).catch(() => fetchVerlof());
+    enqueueSnackbar(
+      "Verlof status has successfully been changed to 'Approved'",
+      {
+        variant: "success",
+      }
+    );
   };
 
   useEffect(() => {
@@ -70,7 +65,7 @@ function Dashboard() {
     setId(verlof.id);
     fetchDeniedVerlof(verlof.id);
   };
-  
+
   const handleApproveVerlof = (verlof) => {
     setId(verlof.id);
     fetchApprovedVerlof(verlof.id);
@@ -86,7 +81,7 @@ function Dashboard() {
       <Smallernav className="smallNav" />
       <div className="componentsBlock">
         <div className="block">
-          {user.role == 1 ? 
+          {user.role == 1 ? (
             <div className="title_block">
               <p>Status</p>
               <div className="tab-container">
@@ -124,8 +119,7 @@ function Dashboard() {
                 </button>
               </div>
             </div>
-          : null
-          }
+          ) : null}
           {user.role == 1 && (
             <div className="block_down">
               {verlofData &&
@@ -328,7 +322,11 @@ function Dashboard() {
                       weekday: "short",
                     });
 
-                    if (verlof.isPending && !verlof.isDenied && !verlof.isApproved) {
+                    if (
+                      verlof.isPending &&
+                      !verlof.isDenied &&
+                      !verlof.isApproved
+                    ) {
                       return (
                         <div className="requestBlock" key={verlof.id}>
                           <div className="employee_block_top">
@@ -396,11 +394,9 @@ function Dashboard() {
                     } else {
                       <p>No data available</p>;
                     }
-                  })
-                }
+                  })}
               </div>
-            ))
-          }
+            ))}
         </div>
       </div>
     </div>
