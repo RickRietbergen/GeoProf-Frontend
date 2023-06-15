@@ -4,11 +4,11 @@ import "./responsiveness.css";
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "./assets/components/Widgets/smallerSideNav";
 import ManagerDashboard from "../src/assets/components/Manager/ManagerDashboard";
-import UserDashboard from "../src/assets/components/userDashboard";
+import UserDashboard from "../src/assets/components/Werknemer/userDashboard";
 import useAuth from "./assets/components/Hooks/useAuth";
 
 function Dashboard() {
-  const { isLoggedIn, user, authFetch } = useAuth();
+  const { user } = useAuth();
 
   return (
     <div className="background">

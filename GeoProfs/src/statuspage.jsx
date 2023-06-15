@@ -9,11 +9,14 @@ import arrow from "../src/assets/arrow.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../src/assets/profile.jpg";
+import { useSnackbar } from "notistack";
 
 function StatusPage() {
   const { isLoggedIn, user, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
   const [activeTab, setActiveTab] = useState("pending");
+  const { enqueueSnackbar } = useSnackbar();
+  const [id, setId] = useState("");
 
   const fetchVerlof = () => {
     authFetch("verlof", { method: "GET" })
@@ -26,11 +29,48 @@ function StatusPage() {
       });
   };
 
+  const fetchDeniedVerlof = (id) => {
+    authFetch(`Status/denied/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).catch(() => fetchVerlof());
+    enqueueSnackbar("Verlof status has successfully been changed to 'Denied'", {
+      variant: "success",
+    });
+  };
+
+  const fetchApprovedVerlof = (id) => {
+    authFetch(`Status/approved/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).catch(() => fetchVerlof());
+    enqueueSnackbar(
+      "Verlof status has successfully been changed to 'Approved'",
+      {
+        variant: "success",
+      }
+    );
+  };
+
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
 
     fetchVerlof();
   }, []);
+
+  const handleDenyVerlof = (verlof) => {
+    setId(verlof.id);
+    fetchDeniedVerlof(verlof.id);
+  };
+
+  const handleApproveVerlof = (verlof) => {
+    setId(verlof.id);
+    fetchApprovedVerlof(verlof.id);
+  };
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -42,11 +82,9 @@ function StatusPage() {
       <Smallernav value="status" className="smallNav" />
       <div className="componentsBlock">
         <div className="block">
-          <div className="title_block">
-            <p>Status</p>
-          </div>
           {user.role == 1 ? (
-            <div>
+            <div className="title_block">
+              <p>Status</p>
               <div className="tab-container">
                 <button
                   className={`filterButton ${
@@ -331,10 +369,16 @@ function StatusPage() {
                             </div>
                             <div className="textBlock_bottom">
                               <div className="acceptDeclineButtons">
-                                <div className="accept">
+                                <div
+                                  className="accept"
+                                  onClick={() => handleApproveVerlof(verlof)}
+                                >
                                   <FontAwesomeIcon icon={faCheck} />
                                 </div>
-                                <div className="decline">
+                                <div
+                                  className="decline"
+                                  onClick={() => handleDenyVerlof(verlof)}
+                                >
                                   <FontAwesomeIcon icon={faTimes} />
                                 </div>
                               </div>

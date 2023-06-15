@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import {
   faUsers,
@@ -12,9 +12,10 @@ import {
 import arrow from "../../../assets/arrow.png";
 import profilePicture from "../../../assets/profile.jpg";
 import useAuth from "../Hooks/useAuth";
+import MessageComponent from "./messages/message";
 
 const ManagerComponent = () => {
-  const { isLoggedIn, user, authFetch } = useAuth();
+  const { isLoggedIn, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
 
   const fetchVerlof = () => {
@@ -28,7 +29,7 @@ const ManagerComponent = () => {
         console.log("Error fetching verlof data:", error);
       });
   };
-
+    
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
 
@@ -37,29 +38,7 @@ const ManagerComponent = () => {
 
   return (
     <div className="componentsBlock componentsBlock_manager">
-      <div className="manager_block_above">
-        <div className="managers_blocks">
-          <div className="managers_blocks_title">
-            <FontAwesomeIcon icon={faUsers} />
-            <p className="smaller"> Employees</p>
-          </div>
-          <div className="managers_blocks_number">20</div>
-        </div>
-        <div className="managers_blocks">
-          <div className="managers_blocks_title">
-            <FontAwesomeIcon icon={faClock} />
-            <p className="smaller"> To Request</p>
-          </div>
-          <div className="managers_blocks_number">20</div>
-        </div>
-        <div className="managers_blocks">
-          <div className="managers_blocks_title">
-            <FontAwesomeIcon icon={faEnvelope} />
-            <p className="smaller">Notifications</p>
-          </div>
-          <div className="managers_blocks_number">20</div>
-        </div>
-      </div>
+      <MessageComponent />
 
       <div className="manager_block_bottom">
         <div className="titleName">
