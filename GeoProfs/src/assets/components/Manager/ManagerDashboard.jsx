@@ -29,24 +29,25 @@ const ManagerComponent = () => {
         console.log("Error fetching verlof data:", error);
       });
   };
-
+  
   const fetchManagerDashboard = () => {
     authFetch("Manager/dashboard", { method: "GET" })
-      .then((data) => {
-        const allManagerDashboardData = data;
-        setManagerData(allManagerDashboardData);
-      })
+    .then((data) => {
+      const allManagerDashboardData = data;
+      setManagerData(allManagerDashboardData);
+    })
       .catch((error) => {
         console.log("Error fetching manager dashboard data:", error);
       });
-  }
-
-  console.log(managerData);
-
+    }
+    
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
 
     fetchVerlof();
+  }, []);
+
+  useEffect(() => {
     fetchManagerDashboard();
   }, []);
   
@@ -58,21 +59,21 @@ const ManagerComponent = () => {
             <FontAwesomeIcon icon={faUsers} />
             <p> Employees</p>
           </div>
-          <div className="managers_blocks_number">20</div>
+          <div className="managers_blocks_number">{managerData && managerData.users}</div>
         </div>
         <div className="managers_blocks">
           <div className="managers_blocks_title">
             <FontAwesomeIcon icon={faClock} />
             <p> To Request</p>
           </div>
-          <div className="managers_blocks_number">20</div>
+          <div className="managers_blocks_number">{managerData && managerData.verlofs}</div>
         </div>
         <div className="managers_blocks">
           <div className="managers_blocks_title">
             <FontAwesomeIcon icon={faEnvelope} />
             <p>Notifications</p>
           </div>
-          <div className="managers_blocks_number">20</div>
+          <div className="managers_blocks_number">{managerData && managerData.employeeIsSick}</div>
         </div>
       </div>
 
@@ -118,7 +119,9 @@ const ManagerComponent = () => {
                       />
                       <div>
                         <p className="bold">{verlof.username}</p>
-                        <p className="function_daysOff">{verlof.afdelingsnaam}</p>
+                        <p className="function_daysOff">
+                          {verlof.afdelingsnaam}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -140,9 +143,7 @@ const ManagerComponent = () => {
                       <p className="reason_block">
                         Reason: {verlof.verlofReden}
                       </p>
-                      <p className="reason_block">
-                        {verlof.beschrijving}
-                      </p>
+                      <p className="reason_block">{verlof.beschrijving}</p>
                     </div>
                     <div className="textBlock_bottom">
                       <div className="submission_date">
@@ -163,8 +164,7 @@ const ManagerComponent = () => {
                   </div>
                 </div>
               );
-            })
-          }
+            })}
         </div>
       </div>
     </div>
