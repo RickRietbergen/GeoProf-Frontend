@@ -14,7 +14,7 @@ import profilePicture from "../../../../../src/assets/profile.jpg";
 import useAuth from "../../Hooks/useAuth";
 
 const MessageComponent = () => {
-  const { isLoggedIn, user, authFetch } = useAuth();
+  const { authFetch } = useAuth();
   const [managerData, setManagerData] = useState(null);
 
   const fetchManagerDashboard = () => {

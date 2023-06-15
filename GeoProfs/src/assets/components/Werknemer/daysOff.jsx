@@ -12,17 +12,14 @@ const DaysOffComponent = () => {
       .then((data) => {
         setTakenDays(data);
         document.documentElement.style.setProperty("--value", data.daysTaken);
-        document.documentElement.style.setProperty(
-          "--max-value",
-          data.totalDaysAvailable
-        );
+        document.documentElement.style.setProperty("--max-value", data.totalDaysAvailable);
       })
       .catch((error) => {
         console.log("Error fetching verlof", error);
       });
   }, []);
 
-  console.log(takenDays);
+  // console.log(takenDays);
 
   return (
     <div className="daysOffComponent">
@@ -42,9 +39,9 @@ const DaysOffComponent = () => {
           <div className="daysOffBottom">
             <div
               role="progressbar"
-              aria-value={20}
+              aria-valuenow={20}
               aria-valuemin={0}
-              aria-max-value={100}
+              aria-valuemax={100}
             ></div>
             <p className="maximum">OUT OF {takenDays.totalDaysAvailable}</p>
           </div>

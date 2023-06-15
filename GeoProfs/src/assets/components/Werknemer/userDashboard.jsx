@@ -1,8 +1,8 @@
 import React from "react";
-import VerlofComponent from "../components/Widgets/request";
-import DaysOff from "../components/Widgets/daysOff";
-import Status from "../components/Widgets/statusComponent";
-import ColleagueDayOff from "../components/Widgets/ColleaguesDaysOff";
+import VerlofComponent from "./request";
+import DaysOff from "./daysOff";
+import Status from "../Widgets/statusComponent";
+import ColleagueDayOff from "./ColleaguesDaysOff";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 

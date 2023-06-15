@@ -15,7 +15,7 @@ import useAuth from "../Hooks/useAuth";
 import MessageComponent from "./messages/message";
 
 const ManagerComponent = () => {
-  const { isLoggedIn, user, authFetch } = useAuth();
+  const { isLoggedIn, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
 
   const fetchVerlof = () => {
