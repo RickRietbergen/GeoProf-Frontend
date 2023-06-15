@@ -82,43 +82,43 @@ function StatusPage() {
       <Smallernav value="status" className="smallNav" />
       <div className="componentsBlock">
         <div className="block">
+          <div className="title_block">
+            <p>Status</p>
+          </div>
           {user.role == 1 ? (
-            <div className="title_block">
-              <p>Status</p>
-              <div className="tab-container">
-                <button
-                  className={`filterButton ${
-                    activeTab === "pending" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("pending")}
-                >
-                  Pending
-                </button>
-                <button
-                  className={`filterButton ${
-                    activeTab === "confirmed" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("confirmed")}
-                >
-                  Confirmed
-                </button>
-                <button
-                  className={`filterButton ${
-                    activeTab === "denied" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("denied")}
-                >
-                  Denied
-                </button>
-                <button
-                  className={`filterButton ${
-                    activeTab === "all" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("all")}
-                >
-                  All
-                </button>
-              </div>
+            <div className="tab-container">
+              <button
+                className={`filterButton ${
+                  activeTab === "pending" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("pending")}
+              >
+                Pending
+              </button>
+              <button
+                className={`filterButton ${
+                  activeTab === "confirmed" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("confirmed")}
+              >
+                Confirmed
+              </button>
+              <button
+                className={`filterButton ${
+                  activeTab === "denied" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("denied")}
+              >
+                Denied
+              </button>
+              <button
+                className={`filterButton ${
+                  activeTab === "all" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("all")}
+              >
+                All
+              </button>
             </div>
           ) : null}
           {user.role == 1 && (
