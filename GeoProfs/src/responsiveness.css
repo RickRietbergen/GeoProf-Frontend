@@ -1,0 +1,218 @@
+@media only screen and (max-width: 2560px) {
+  .dotsMore {
+    padding: 0.5%;
+  }
+}
+.employee_block_top,
+.dateBlock,
+.requestBlock,
+.textBlock {
+  height: auto !important;
+}
+
+.textBlock_bottom,
+.textBlock_top {
+  padding: 3%;
+}
+
+@media only screen and (max-width: 1440px) {
+  .img_text {
+    height: 5rem !important;
+  }
+  .requestBlock {
+    width: 16.35rem;
+    height: 17rem;
+  }
+  .function_daysOff {
+    font-size: 0.93rem;
+  }
+  .acceptDeclineButtons {
+    width: 30%;
+  }
+  .textBlock {
+    height: 36%;
+  }
+  .daysOffInfo {
+    width: 61%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  /* .colleague_block {
+    width: 16.45rem !important;
+  } */
+
+  .smallerSidenav {
+    display: none;
+  }
+  .requestBlock {
+    width: 16rem;
+  }
+  .function_daysOff {
+    font-size: 0.93rem;
+  }
+  .acceptDeclineButtons {
+    width: 21%;
+  }
+  .managers_blocks_title {
+    font-size: 1.2rem;
+  }
+  .managers_blocks_number {
+    font-size: 6rem;
+  }
+  .managers_blocks {
+    height: 13rem;
+    width: 27%;
+  }
+  .manager_block_above {
+    height: 28%;
+  }
+  .manager_block_bottom {
+    height: 67%;
+    justify-content: center;
+  }
+  .requestBlocks {
+    gap: 2.09%;
+    min-height: 261px;
+  }
+  .function {
+    font-size: 0.85rem;
+  }
+  .active {
+    width: 112%;
+  }
+  .img_text {
+    height: 5rem;
+  }
+  .day {
+    font-size: 1.9rem;
+  }
+  .beginMonth,
+  .endMonth {
+    font-size: 1.3rem;
+  }
+  .dateBlock {
+    padding: 1% 0;
+  }
+  .textBlock {
+    height: 36.5%;
+  }
+  .titleName {
+    padding-bottom: 3%;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .sidenav {
+    display: none;
+  }
+  .daysOffPicture {
+    height: 2.9rem;
+  }
+  .smallerSidenav {
+    display: block;
+    width: 90px;
+  }
+  .managers_blocks_number {
+    font-size: 2rem;
+  }
+  .smaller {
+    display: none;
+  }
+  .managers_blocks {
+    height: 6rem;
+  }
+  .manager_block_bottom {
+    justify-content: normal;
+    height: 80%;
+    gap: 2%;
+  }
+  .manager_block_top {
+    height: 20%;
+  }
+  .titleName {
+    font-size: 15px;
+  }
+  .bold {
+    font-size: 1rem !important;
+  }
+  .function_daysOff {
+    font-size: 0.8rem;
+  }
+  .requestBlock {
+    width: 20.35rem;
+  }
+  .requestBlocks,
+  .titleName {
+    padding: 0 4%;
+  }
+
+  .requestBlocks {
+    display: flex;
+    padding: 0 3%;
+    gap: 2.4%;
+    row-gap: 8%;
+    flex-wrap: wrap;
+    height: 100%;
+    max-height: 43rem;
+    overflow-y: auto;
+  }
+  .textBlock {
+    height: 40.8%;
+  }
+  .beginMonth,
+  .endMonth {
+    font-size: 1rem;
+  }
+  .day {
+    font-size: 1.5rem;
+  }
+
+  .textBlock {
+    height: auto;
+  }
+  .componentsBlock_manager {
+    justify-content: center;
+  }
+  .lowerBlock {
+    height: 99%;
+  }
+  .dotsMore {
+    padding: 2%;
+  }
+  .active {
+    width: 150%;
+  }
+  .employee_block_top,
+  .dateBlock,
+  .requestBlock {
+    height: auto;
+  }
+  .textBlock_bottom,
+  .textBlock_top {
+    padding: 3%;
+  }
+  .acceptDeclineButtons {
+    width: 25%;
+  }
+  .profilePicture {
+    width: 71%;
+  }
+  .title_block {
+    justify-content: center;
+    font-size: 23px !important;
+  }
+  .margin {
+    margin-bottom: 5%;
+  }
+  .colleague_block {
+    margin-bottom: 15% !important;
+    width: 18.8rem !important;
+  }
+  .block_down {
+    max-height: 48rem !important;
+  }
+  .img_text {
+    height: 6rem !important;
+  }
+}

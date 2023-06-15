@@ -6,6 +6,7 @@
   font-weight: bold;
   cursor: pointer;
 }
+
 :root {
   --value: 16;
   --max-value: 20;
@@ -29,7 +30,9 @@
   inherits: true;
   initial-value: 0;
 }
-
+.smallerSidenav {
+  display: none;
+}
 [role="progressbar"] {
   --percentage: calc(var(--value) * (100 / var(--max-value)));
   --size: 300px;
@@ -81,7 +84,6 @@
   overflow: hidden;
   width: 15%;
   height: 100%;
-  /* background-color: #f7f7f7; */
   background-color: #ededed;
   display: flex;
   flex-direction: column;
@@ -105,8 +107,8 @@
   width: 35%;
   object-fit: cover;
   border-radius: 100%;
-  padding-bottom: 7%;
-  padding-top: 10%;
+  margin-bottom: 7%;
+  margin-top: 10%;
 }
 .infoBlock {
   width: 100%;
@@ -235,9 +237,9 @@ input {
 }
 .textfield {
   border: 1px solid #a8a8a8;
-  padding: 0;
-  min-height: 9rem;
-  width: 100%;
+  padding: 16px;
+  min-height: 7rem;
+  width: 96%;
   border-radius: 5px;
 }
 .sendBlock {
@@ -347,7 +349,7 @@ select {
   flex-direction: column;
   width: 100%;
   height: 81%;
-  align-items: center;
+  padding-left: 2%;
 }
 
 .confirmed {
@@ -507,6 +509,16 @@ select {
 .colleague_name {
   font-size: var(--standard-font-size);
   font-weight: bold;
+}
+
+.colleague_info {
+  width: 59%;
+  display: flex;
+  align-items: center;
+}
+.collegue_info_block {
+  display: flex;
+  flex-direction: column;
 }
 .logo_colleague {
   width: 33%;
@@ -778,6 +790,7 @@ select {
     display: none;
   }
 }
+
 /* /////////////////////////////////////////////////////////////////////////////////////// */
 
 .componentsBlock_manager {
@@ -828,11 +841,12 @@ select {
   font-weight: bold;
 }
 .requestBlock {
-  width: 19rem;
+  width: 18.9rem;
   height: 20rem;
   background-color: white;
   border: 3px solid #f3f3f3;
 }
+
 .employee_block_top {
   height: 30%;
   width: 98.2%;
@@ -841,7 +855,7 @@ select {
   border-bottom: 2px solid #f3f3f3;
 }
 .textBlock {
-  height: 36.7%;
+  height: 36.9%;
   width: 100%;
   background-color: #faf8f4;
 }
@@ -871,20 +885,7 @@ select {
   align-items: center;
   color: white;
 }
-.submission_date {
-  display: flex;
-  width: 11rem;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 0.9rem;
-}
-.submission_date {
-  color: #a8a8a8;
-}
 
-.submission_date p span {
-  color: red;
-}
 .accept,
 .decline {
   width: 25px;
@@ -914,9 +915,8 @@ select {
 .requestBlocks {
   display: flex;
   padding: 0 3%;
-  gap: 2.4%;
-  row-gap: 4%;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .dotsMore {
   gap: 5px;
@@ -928,4 +928,7 @@ select {
   background-color: #ededed;
   font-size: var(--standard-font-size);
   cursor: pointer;
+}
+.daysOffInfo {
+  width: 59%;
 }

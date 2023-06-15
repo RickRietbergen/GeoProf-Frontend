@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import {
   faUsers,
@@ -35,7 +35,7 @@ const ManagerComponent = () => {
 
     fetchVerlof();
   }, []);
-  
+
   return (
     <div className="componentsBlock componentsBlock_manager">
       <MessageComponent />
@@ -80,7 +80,7 @@ const ManagerComponent = () => {
                         src={profilePicture}
                         alt="Profile"
                       />
-                      <div>
+                      <div className="daysOffInfo">
                         <p className="bold">{verlof.username}</p>
                         <p className="function_daysOff">
                           {verlof.afdelingsnaam}
@@ -109,12 +109,6 @@ const ManagerComponent = () => {
                       <p className="reason_block">{verlof.beschrijving}</p>
                     </div>
                     <div className="textBlock_bottom">
-                      <div className="submission_date">
-                        <FontAwesomeIcon icon={faClock} />
-                        <p>
-                          date of request <span>15 aug</span>
-                        </p>
-                      </div>
                       <div className="acceptDeclineButtons">
                         <div className="accept">
                           <FontAwesomeIcon icon={faCheck} />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./statusPage.css";
 import "./dashboard.css";
+import "../src/responsiveness.css";
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 import useAuth from "./assets/components/Hooks/useAuth";
@@ -10,7 +11,7 @@ import { faClock, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../src/assets/profile.jpg";
 import { useSnackbar } from "notistack";
 
-function Dashboard() {
+function StatusPage() {
   const { isLoggedIn, user, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
   const [activeTab, setActiveTab] = useState("pending");
@@ -78,46 +79,46 @@ function Dashboard() {
   return (
     <div className="background">
       <SideNav value="status" className="nav" />
-      <Smallernav className="smallNav" />
+      <Smallernav value="status" className="smallNav" />
       <div className="componentsBlock">
         <div className="block">
+          <div className="title_block">
+            <p>Status</p>
+          </div>
           {user.role == 1 ? (
-            <div className="title_block">
-              <p>Status</p>
-              <div className="tab-container">
-                <button
-                  className={`filterButton ${
-                    activeTab === "pending" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("pending")}
-                >
-                  Pending
-                </button>
-                <button
-                  className={`filterButton ${
-                    activeTab === "confirmed" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("confirmed")}
-                >
-                  Confirmed
-                </button>
-                <button
-                  className={`filterButton ${
-                    activeTab === "denied" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("denied")}
-                >
-                  Denied
-                </button>
-                <button
-                  className={`filterButton ${
-                    activeTab === "all" ? "selectedButton" : ""
-                  }`}
-                  onClick={() => handleTabChange("all")}
-                >
-                  All
-                </button>
-              </div>
+            <div className="tab-container">
+              <button
+                className={`filterButton ${
+                  activeTab === "pending" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("pending")}
+              >
+                Pending
+              </button>
+              <button
+                className={`filterButton ${
+                  activeTab === "confirmed" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("confirmed")}
+              >
+                Confirmed
+              </button>
+              <button
+                className={`filterButton ${
+                  activeTab === "denied" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("denied")}
+              >
+                Denied
+              </button>
+              <button
+                className={`filterButton ${
+                  activeTab === "all" ? "selectedButton" : ""
+                }`}
+                onClick={() => handleTabChange("all")}
+              >
+                All
+              </button>
             </div>
           ) : null}
           {user.role == 1 && (
@@ -328,7 +329,7 @@ function Dashboard() {
                       !verlof.isApproved
                     ) {
                       return (
-                        <div className="requestBlock" key={verlof.id}>
+                        <div className="requestBlock margin" key={verlof.id}>
                           <div className="employee_block_top">
                             <div className="img_text">
                               <img
@@ -336,9 +337,9 @@ function Dashboard() {
                                 src={profilePicture}
                                 alt="Profile"
                               />
-                              <div>
+                              <div className="daysOffInfo">
                                 <p className="bold">{verlof.username}</p>
-                                <p className="function_daysOff">
+                                <p className="function_daysOff ">
                                   {verlof.afdelingsnaam}
                                 </p>
                               </div>
@@ -367,12 +368,6 @@ function Dashboard() {
                               </p>
                             </div>
                             <div className="textBlock_bottom">
-                              <div className="submission_date">
-                                <FontAwesomeIcon icon={faClock} />
-                                <p>
-                                  date of request <span>15 aug</span>
-                                </p>
-                              </div>
                               <div className="acceptDeclineButtons">
                                 <div
                                   className="accept"
@@ -403,4 +398,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default StatusPage;

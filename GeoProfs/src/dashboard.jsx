@@ -1,5 +1,6 @@
 import React from "react";
 import "./dashboard.css";
+import "./responsiveness.css";
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "./assets/components/Widgets/smallerSideNav";
 import ManagerDashboard from "../src/assets/components/Manager/ManagerDashboard";
@@ -11,16 +12,12 @@ function Dashboard() {
 
   return (
     <div className="background">
-      <SideNav value="dashboard" className="nav" />
-      <Smallernav className="smallNav" />
+      <SideNav value="dashboard" className="nav " />
+      <Smallernav value="dashboard" className="smallNav" />
 
-      {user.role == 1 &&
-        <UserDashboard />
-      }
+      {user.role == 1 && <UserDashboard />}
 
-      {user.role == 2 || user.role == 4 &&
-        <ManagerDashboard />
-      }
+      {user.role == 2 || (user.role == 4 && <ManagerDashboard />)}
     </div>
   );
 }

@@ -9,6 +9,8 @@ import {
 import profilePicture from "../../../assets/profile.jpg";
 import logo from "../../../assets/logoGeoProf.png";
 import useAuth from "../Hooks/useAuth";
+import "../../../../src/responsiveness.css";
+import "../../../responsiveness.css";
 
 const Navbar = ({ value }) => {
   const { isLoggedIn, user } = useAuth();
