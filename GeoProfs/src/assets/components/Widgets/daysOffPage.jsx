@@ -1,5 +1,6 @@
 import React from "react";
 import arrow from "../../arrow.png";
+import "../../.../../../../src/responsiveness.css";
 import colleaguePicture from "../../profile.jpg";
 const ColleagueBlock = ({ profilePicture }) => {
   return (

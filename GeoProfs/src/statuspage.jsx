@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./statusPage.css";
 import "./dashboard.css";
+import "../src/responsiveness.css";
 import SideNav from "./assets/components/Widgets/sideNav";
 import Smallernav from "../src/assets/components/Widgets/smallerSideNav";
 import useAuth from "./assets/components/Hooks/useAuth";
@@ -9,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../src/assets/profile.jpg";
 
-function Dashboard() {
+function StatusPage() {
   const { isLoggedIn, user, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
   const [activeTab, setActiveTab] = useState("pending");
@@ -329,12 +330,6 @@ function Dashboard() {
                               </p>
                             </div>
                             <div className="textBlock_bottom">
-                              <div className="submission_date">
-                                <FontAwesomeIcon icon={faClock} />
-                                <p>
-                                  date of request <span>15 aug</span>
-                                </p>
-                              </div>
                               <div className="acceptDeclineButtons">
                                 <div className="accept">
                                   <FontAwesomeIcon icon={faCheck} />
@@ -359,4 +354,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default StatusPage;

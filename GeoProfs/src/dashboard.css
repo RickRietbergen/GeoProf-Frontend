@@ -81,7 +81,6 @@
   overflow: hidden;
   width: 15%;
   height: 100%;
-  /* background-color: #f7f7f7; */
   background-color: #ededed;
   display: flex;
   flex-direction: column;
@@ -105,8 +104,8 @@
   width: 35%;
   object-fit: cover;
   border-radius: 100%;
-  padding-bottom: 7%;
-  padding-top: 10%;
+  margin-bottom: 7%;
+  margin-top: 10%;
 }
 .infoBlock {
   width: 100%;
@@ -788,6 +787,7 @@ select {
     display: none;
   }
 }
+
 /* /////////////////////////////////////////////////////////////////////////////////////// */
 
 .componentsBlock_manager {
@@ -838,11 +838,12 @@ select {
   font-weight: bold;
 }
 .requestBlock {
-  width: 19rem;
+  width: 18.9rem;
   height: 20rem;
   background-color: white;
   border: 3px solid #f3f3f3;
 }
+
 .employee_block_top {
   height: 30%;
   width: 98.2%;
@@ -851,7 +852,7 @@ select {
   border-bottom: 2px solid #f3f3f3;
 }
 .textBlock {
-  height: 36.7%;
+  height: 36.9%;
   width: 100%;
   background-color: #faf8f4;
 }
@@ -881,20 +882,7 @@ select {
   align-items: center;
   color: white;
 }
-.submission_date {
-  display: flex;
-  width: 11rem;
-  align-items: center;
-  justify-content: space-around;
-  font-size: 0.9rem;
-}
-.submission_date {
-  color: #a8a8a8;
-}
 
-.submission_date p span {
-  color: red;
-}
 .accept,
 .decline {
   width: 25px;
@@ -924,9 +912,8 @@ select {
 .requestBlocks {
   display: flex;
   padding: 0 3%;
-  gap: 2.4%;
-  row-gap: 4%;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .dotsMore {
   gap: 5px;

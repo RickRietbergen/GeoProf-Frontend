@@ -7,8 +7,9 @@ import {
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import profilePicture from "../../../assets/profile.jpg";
-import logo from "../../../assets/logoGeoProf.png";
+import "../../../responsiveness.css";
 import "../../../smalnav.css";
+
 const SmallerSideNav = () => {
   return (
     <div className="smallerSidenav">

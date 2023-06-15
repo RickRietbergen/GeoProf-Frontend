@@ -9,12 +9,14 @@ import {
 import profilePicture from "../../../assets/profile.jpg";
 import logo from "../../../assets/logoGeoProf.png";
 import useAuth from "../Hooks/useAuth";
+import "../../../../src/responsiveness.css";
+import "../../../responsiveness.css";
 
 const Navbar = ({ value }) => {
   const { isLoggedIn, user } = useAuth();
 
   return (
-    <div className="sidenav">
+    <div className="sidenav testje">
       <img
         className="logo"
         src={logo}

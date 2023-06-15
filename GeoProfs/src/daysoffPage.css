@@ -1,7 +1,8 @@
 .colleague_block {
   height: 11rem;
-  width: 17rem;
+  width: 19rem;
   background-color: white;
+  margin-bottom: 5%;
 }
 .colleague_block_top {
   height: 55%;
@@ -24,7 +25,7 @@
   width: 87%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 6rem;
 }
 .bold {

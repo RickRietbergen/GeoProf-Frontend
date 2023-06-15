@@ -8,7 +8,7 @@ import arrow from "../src/assets/arrow.png";
 import SideNav from "./assets/components/Widgets/sideNav";
 import useAuth from "./assets/components/Hooks/useAuth";
 
-function Dashboard() {
+function DaysOffPage() {
   const [activeTab, setActiveTab] = useState("pending");
   const { isLoggedIn, user, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
@@ -61,15 +61,24 @@ function Dashboard() {
                   weekday: "short",
                 });
 
-                if (!verlof.isPending && !verlof.isDenied && verlof.isApproved) {
-                  return(
+                if (
+                  !verlof.isPending &&
+                  !verlof.isDenied &&
+                  verlof.isApproved
+                ) {
+                  return (
                     <div className="colleague_block" key={verlof.id}>
                       <div className="colleague_block_top">
                         <div className="img_text">
-                          <img className="daysOffPicture" src={profilePicture}></img>
+                          <img
+                            className="daysOffPicture"
+                            src={profilePicture}
+                          ></img>
                           <div>
                             <p className="bold">{verlof.username}</p>
-                            <p className="function_daysOff">{verlof.afdelingsnaam}</p>
+                            <p className="function_daysOff">
+                              {verlof.afdelingsnaam}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -93,8 +102,7 @@ function Dashboard() {
                 } else {
                   <p>No data available</p>;
                 }
-              })
-            }
+              })}
           </div>
         </div>
       </div>
@@ -102,4 +110,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DaysOffPage;

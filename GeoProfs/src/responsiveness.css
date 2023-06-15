@@ -1,0 +1,108 @@
+@media only screen and (max-width: 2560px) {
+  .dotsMore {
+    padding: 0.5%;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .img_text {
+    height: 5rem !important;
+  }
+  .requestBlock {
+    width: 16.9rem;
+    height: 17rem;
+  }
+  .function_daysOff {
+    font-size: 0.93rem;
+  }
+  .acceptDeclineButtons {
+    width: 30%;
+  }
+  .textBlock {
+    height: 36%;
+  }
+  .daysOffInfo {
+    width: 61%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .smallerSidenav {
+    display: none;
+  }
+  .requestBlock {
+    width: 23.35rem;
+    height: 17rem;
+  }
+  .function_daysOff {
+    font-size: 0.93rem;
+  }
+  .acceptDeclineButtons {
+    width: 21%;
+  }
+  .managers_blocks_title {
+    font-size: 1.2rem;
+  }
+  .managers_blocks_number {
+    font-size: 6rem;
+  }
+  .managers_blocks {
+    height: 13rem;
+    width: 27%;
+  }
+  .manager_block_above {
+    height: 28%;
+  }
+  .manager_block_bottom {
+    height: 67%;
+  }
+  .requestBlocks {
+    gap: 7.37%;
+  }
+  .function {
+    font-size: 0.85rem;
+  }
+  .active {
+    width: 112%;
+  }
+  .img_text {
+    height: 5rem;
+  }
+  .day {
+    font-size: 1.9rem;
+  }
+  .beginMonth,
+  .endMonth {
+    font-size: 1.3rem;
+  }
+  .dateBlock {
+    padding: 1% 0;
+  }
+  .textBlock {
+    height: 36.5%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .sidenav {
+    display: none;
+  }
+  .smallerSidenav {
+    display: block;
+  }
+  .managers_blocks_number {
+    font-size: 2rem;
+  }
+  .smaller {
+    display: none;
+  }
+  .managers_blocks {
+    height: 6rem;
+  }
+  .manager_block_bottom {
+    justify-content: normal;
+  }
+  .titleName {
+    font-size: 15px;
+  }
+}

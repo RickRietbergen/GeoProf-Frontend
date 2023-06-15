@@ -41,21 +41,21 @@ const ManagerComponent = () => {
         <div className="managers_blocks">
           <div className="managers_blocks_title">
             <FontAwesomeIcon icon={faUsers} />
-            <p> Employees</p>
+            <p className="smaller"> Employees</p>
           </div>
           <div className="managers_blocks_number">20</div>
         </div>
         <div className="managers_blocks">
           <div className="managers_blocks_title">
             <FontAwesomeIcon icon={faClock} />
-            <p> To Request</p>
+            <p className="smaller"> To Request</p>
           </div>
           <div className="managers_blocks_number">20</div>
         </div>
         <div className="managers_blocks">
           <div className="managers_blocks_title">
             <FontAwesomeIcon icon={faEnvelope} />
-            <p>Notifications</p>
+            <p className="smaller">Notifications</p>
           </div>
           <div className="managers_blocks_number">20</div>
         </div>
