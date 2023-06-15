@@ -16,6 +16,7 @@ import useAuth from "../Hooks/useAuth";
 const ManagerComponent = () => {
   const { isLoggedIn, user, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
+  const [managerData, setManagerData] = useState(null);
 
   const fetchVerlof = () => {
     authFetch("verlof", { method: "GET" })
@@ -29,10 +30,24 @@ const ManagerComponent = () => {
       });
   };
 
+  const fetchManagerDashboard = () => {
+    authFetch("Manager/dashboard", { method: "GET" })
+      .then((data) => {
+        const allManagerDashboardData = data;
+        setManagerData(allManagerDashboardData);
+      })
+      .catch((error) => {
+        console.log("Error fetching manager dashboard data:", error);
+      });
+  }
+
+  console.log(managerData);
+
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
 
     fetchVerlof();
+    fetchManagerDashboard();
   }, []);
   
   return (
