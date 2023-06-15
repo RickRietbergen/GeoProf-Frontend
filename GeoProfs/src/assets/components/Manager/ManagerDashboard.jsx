@@ -12,11 +12,11 @@ import {
 import arrow from "../../../assets/arrow.png";
 import profilePicture from "../../../assets/profile.jpg";
 import useAuth from "../Hooks/useAuth";
+import MessageComponent from "./messages/message";
 
 const ManagerComponent = () => {
   const { isLoggedIn, user, authFetch } = useAuth();
   const [verlofData, setVerlofData] = useState(null);
-  const [managerData, setManagerData] = useState(null);
 
   const fetchVerlof = () => {
     authFetch("verlof", { method: "GET" })
@@ -29,53 +29,16 @@ const ManagerComponent = () => {
         console.log("Error fetching verlof data:", error);
       });
   };
-  
-  const fetchManagerDashboard = () => {
-    authFetch("Manager/dashboard", { method: "GET" })
-    .then((data) => {
-      const allManagerDashboardData = data;
-      setManagerData(allManagerDashboardData);
-    })
-      .catch((error) => {
-        console.log("Error fetching manager dashboard data:", error);
-      });
-    }
     
   useEffect(() => {
     if (!isLoggedIn) navigate("/login");
 
     fetchVerlof();
   }, []);
-
-  useEffect(() => {
-    fetchManagerDashboard();
-  }, []);
   
   return (
     <div className="componentsBlock componentsBlock_manager">
-      <div className="manager_block_above">
-        <div className="managers_blocks">
-          <div className="managers_blocks_title">
-            <FontAwesomeIcon icon={faUsers} />
-            <p> Employees</p>
-          </div>
-          <div className="managers_blocks_number">{managerData && managerData.users}</div>
-        </div>
-        <div className="managers_blocks">
-          <div className="managers_blocks_title">
-            <FontAwesomeIcon icon={faClock} />
-            <p> To Request</p>
-          </div>
-          <div className="managers_blocks_number">{managerData && managerData.verlofs}</div>
-        </div>
-        <div className="managers_blocks">
-          <div className="managers_blocks_title">
-            <FontAwesomeIcon icon={faEnvelope} />
-            <p>Notifications</p>
-          </div>
-          <div className="managers_blocks_number">{managerData && managerData.employeeIsSick}</div>
-        </div>
-      </div>
+      <MessageComponent />
 
       <div className="manager_block_bottom">
         <div className="titleName">
