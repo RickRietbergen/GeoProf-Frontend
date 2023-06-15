@@ -19,13 +19,23 @@ const SmallerSideNav = () => {
         </div>
         <div className="categoryBlock">
           <a className="active">
-            <FontAwesomeIcon className="home" icon={faHouse} />
+            <FontAwesomeIcon
+              className="home"
+              icon={faHouse}
+              onClick={() => (window.location.href = "/dashboard")}
+            />
           </a>
           <a className="nav_icons">
-            <FontAwesomeIcon icon={faSignal} />
+            <FontAwesomeIcon
+              icon={faSignal}
+              onClick={() => (window.location.href = "/status")}
+            />
           </a>
           <a className="nav_icons">
-            <FontAwesomeIcon icon={faUserXmark} />
+            <FontAwesomeIcon
+              icon={faUserXmark}
+              onClick={() => (window.location.href = "/daysoff")}
+            />
           </a>
         </div>
         <div>

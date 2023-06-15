@@ -13,7 +13,7 @@ function Dashboard() {
   return (
     <div className="background">
       <SideNav value="dashboard" className="nav " />
-      <Smallernav className="smallNav" />
+      <Smallernav value="dashboard" className="smallNav" />
 
       {user.role == 1 && <UserDashboard />}
 

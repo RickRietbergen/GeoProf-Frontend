@@ -16,7 +16,7 @@ const Navbar = ({ value }) => {
   const { isLoggedIn, user } = useAuth();
 
   return (
-    <div className="sidenav testje">
+    <div className="sidenav">
       <img
         className="logo"
         src={logo}

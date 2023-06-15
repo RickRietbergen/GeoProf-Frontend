@@ -1,11 +1,11 @@
 .colleague_block {
-  height: 11rem;
-  width: 19rem;
+  height: auto;
+  width: 22.8rem;
   background-color: white;
   margin-bottom: 5%;
 }
 .colleague_block_top {
-  height: 55%;
+  height: auto;
   width: 100%;
   border-left: 6px solid #ffb906;
   display: flex;

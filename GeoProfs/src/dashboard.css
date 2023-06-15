@@ -6,6 +6,7 @@
   font-weight: bold;
   cursor: pointer;
 }
+
 :root {
   --value: 16;
   --max-value: 20;
@@ -29,7 +30,9 @@
   inherits: true;
   initial-value: 0;
 }
-
+.smallerSidenav {
+  display: none;
+}
 [role="progressbar"] {
   --percentage: calc(var(--value) * (100 / var(--max-value)));
   --size: 300px;

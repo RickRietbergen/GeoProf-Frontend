@@ -39,7 +39,7 @@ function StatusPage() {
   return (
     <div className="background">
       <SideNav value="status" className="nav" />
-      <Smallernav className="smallNav" />
+      <Smallernav value="status" className="smallNav" />
       <div className="componentsBlock">
         <div className="block">
           <div className="title_block">
@@ -291,7 +291,7 @@ function StatusPage() {
                       !verlof.isApproved
                     ) {
                       return (
-                        <div className="requestBlock" key={verlof.id}>
+                        <div className="requestBlock margin" key={verlof.id}>
                           <div className="employee_block_top">
                             <div className="img_text">
                               <img

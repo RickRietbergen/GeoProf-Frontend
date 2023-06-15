@@ -7,6 +7,7 @@ import profilePicture from "./assets/profile.jpg";
 import arrow from "../src/assets/arrow.png";
 import SideNav from "./assets/components/Widgets/sideNav";
 import useAuth from "./assets/components/Hooks/useAuth";
+import SmallerSideNav from "./assets/components/Widgets/smallerSideNav";
 
 function DaysOffPage() {
   const [activeTab, setActiveTab] = useState("pending");
@@ -33,6 +34,7 @@ function DaysOffPage() {
   return (
     <div className="background">
       <SideNav value="daysoff" />
+      <SmallerSideNav value="daysoff" />
 
       <div className="componentsBlock">
         <div className="block">
