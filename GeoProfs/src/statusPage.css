@@ -5,6 +5,7 @@
   row-gap: 8%;
   flex-wrap: wrap;
   max-height: 43rem;
+  width: 85.5rem;
   overflow-y: auto;
 }
 
@@ -127,7 +128,8 @@
 .requestBlocks_status {
   display: flex;
   padding: 0 3%;
-  gap: 2.4%;
+  gap: 1.85%;
+  width: 80vw;
   row-gap: 4%;
   flex-wrap: wrap;
   height: 100%;

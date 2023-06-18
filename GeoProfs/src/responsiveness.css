@@ -3,9 +3,7 @@
     padding: 0.5%;
   }
 }
-.employee_block_top,
 .dateBlock,
-.requestBlock,
 .textBlock {
   height: auto !important;
 }
@@ -23,8 +21,19 @@
     width: 16.35rem;
     height: 17rem;
   }
+  .employee_block_top {
+    height: auto;
+  }
+  .requestBlocks {
+    height: 100%;
+    display: flex;
+    padding: 0 3%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
   .function_daysOff {
-    font-size: 0.93rem;
+    font-size: 0.93rem !important;
   }
   .acceptDeclineButtons {
     width: 30%;
@@ -35,12 +44,79 @@
   .daysOffInfo {
     width: 61%;
   }
+  .requestBlocks_status {
+    gap: 2.43% !important;
+  }
+  .block_down {
+    width: 72rem !important;
+  }
+  .colleague_block {
+    width: 16.7rem !important;
+  }
+  /* ////////////////////////////////// */
+  .tab-container {
+    margin-top: 3% !important;
+    padding: 0 0 5% 3% !important;
+    display: flex;
+    width: 50% !important;
+    justify-content: space-between !important;
+  }
+
+  .confirmedBlock,
+  .deniedBlock,
+  .pendingBlock {
+    width: 22.73% !important;
+  }
+
+  .day {
+    font-size: 1.8rem;
+  }
+  .confirmedBlock,
+  .pendingBlock,
+  .deniedBlock {
+    margin-bottom: 3%;
+    width: 22.56% !important;
+  }
+  .block_down {
+    gap: 2.63% !important;
+  }
+  .colleague_block {
+    width: 16.58rem !important;
+  }
+  .colleaguesDaysOffBlock {
+    height: 50rem;
+  }
+  .endMonthStatus,
+  .beginMonthStatus {
+    font-size: 1.2rem;
+  }
+  .arrow_status {
+    height: 0.8rem;
+  }
+  .confirmedButton,
+  .deniedButton,
+  .pendingButton {
+    width: 30%;
+  }
+  .information {
+    width: 60%;
+  }
+  .confirmed,
+  .denied,
+  .pending {
+    width: 87%;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-  /* .colleague_block {
-    width: 16.45rem !important;
-  } */
+  .requestBlocks_status {
+    gap: 3% !important;
+
+    width: 81.5vw !important;
+  }
+  .colleague_block {
+    width: 16.5rem !important;
+  }
 
   .smallerSidenav {
     display: none;
@@ -48,11 +124,14 @@
   .requestBlock {
     width: 16rem;
   }
+  .requestBlock {
+    height: 19rem;
+  }
   .function_daysOff {
     font-size: 0.93rem;
   }
   .acceptDeclineButtons {
-    width: 21%;
+    width: 29%;
   }
   .managers_blocks_title {
     font-size: 1.2rem;
@@ -73,6 +152,7 @@
   }
   .requestBlocks {
     gap: 2.09%;
+    height: 56%;
     min-height: 261px;
   }
   .function {
@@ -95,10 +175,64 @@
     padding: 1% 0;
   }
   .textBlock {
-    height: 36.5%;
+    height: 50%;
   }
   .titleName {
     padding-bottom: 3%;
+  }
+  .employee_block_top {
+    height: 30%;
+  }
+  .block_down {
+    width: 52rem !important;
+  }
+  .manager_block_above {
+    height: 43%;
+  }
+
+  /* /////////////////////////////////////// */
+  .tab-container {
+    margin-top: 3% !important;
+    padding: 0 0 5% 3% !important;
+    display: flex;
+    width: 50% !important;
+    justify-content: space-between !important;
+  }
+  .pendingBlock {
+    width: 22.56%;
+  }
+  .confirmedBlock,
+  .pendingBlock,
+  .deniedBlock {
+    margin-bottom: 3%;
+    width: 22.56% !important;
+  }
+  .beginMonth,
+  .endMonth {
+    font-size: 0.7rem;
+  }
+  .day {
+    font-size: 1.3rem;
+  }
+  .confirmedButton,
+  .deniedButton,
+  .pendingButton {
+    width: 30%;
+  }
+  .confirmed,
+  .denied,
+  .pending {
+    width: 88%;
+  }
+  .arrow_status {
+    height: 0.8rem;
+  }
+  .colleaguesDaysOffBlock {
+    height: 48.5rem;
+  }
+  .textfield {
+    width: 93%;
+    min-height: 14.4rem;
   }
 }
 
@@ -127,6 +261,9 @@
     height: 80%;
     gap: 2%;
   }
+  .managers_blocks_title {
+    font-size: 10px;
+  }
   .manager_block_top {
     height: 20%;
   }
@@ -141,6 +278,8 @@
   }
   .requestBlock {
     width: 20.35rem;
+
+    height: 21.6rem !important;
   }
   .requestBlocks,
   .titleName {
@@ -184,8 +323,7 @@
     width: 150%;
   }
   .employee_block_top,
-  .dateBlock,
-  .requestBlock {
+  .dateBlock {
     height: auto;
   }
   .textBlock_bottom,
@@ -207,12 +345,33 @@
   }
   .colleague_block {
     margin-bottom: 15% !important;
-    width: 18.8rem !important;
+    width: 20.8rem !important;
   }
   .block_down {
     max-height: 48rem !important;
+    width: auto !important;
   }
   .img_text {
     height: 6rem !important;
+  }
+  .requestBlocks_status {
+    width: auto !important;
+  }
+  /* ///////////////////////// */
+  .confirmedBlock,
+  .deniedBlock,
+  .pendingBlock {
+    width: 99% !important;
+  }
+  .tab-container {
+    width: 94% !important;
+  }
+  .confirmedBlock,
+  .pendingBlock,
+  .deniedBlock {
+    margin-bottom: 9%;
+  }
+  .componentsBlock {
+    width: 87%;
   }
 }

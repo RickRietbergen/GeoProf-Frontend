@@ -117,15 +117,23 @@ function StatusPage() {
                         <div className="align_and_center">
                           <div className="dateBlock">
                             <div className="align-center">
-                              <div className="beginMonth">{fromMonth}</div>
+                              <div className="beginMonthStatus">
+                                {fromMonth}
+                              </div>
                               <div className="day">{fromDay}</div>
-                              <div className="endMonth">{fromWeekday}</div>
+                              <div className="endMonthStatus">
+                                {fromWeekday}
+                              </div>
                             </div>
                             <img className="arrow" src={arrow}></img>
                             <div className="align-center">
-                              <div className="beginMonth">{untilMonth}</div>
+                              <div className="beginMonthStatus">
+                                {untilMonth}
+                              </div>
                               <div className="day">{untilDay}</div>
-                              <div className="endMonth">{untilWeekday}</div>
+                              <div className="endMonthStatus">
+                                {untilWeekday}
+                              </div>
                             </div>
                           </div>
                         </div>
