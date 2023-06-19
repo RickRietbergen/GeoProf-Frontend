@@ -8,7 +8,6 @@
 .requestBlock,
 .textBlock {
   height: auto !important;
-  max-height: 44.3% !important;
 }
 
 .textBlock_bottom,

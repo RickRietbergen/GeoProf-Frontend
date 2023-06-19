@@ -843,7 +843,7 @@ select {
 .requestBlock {
   width: 18.9rem;
   height: 20rem;
-  background-color: white;
+  background-color: #faf8f4;
   border: 3px solid #f3f3f3;
 }
 
@@ -853,6 +853,7 @@ select {
   border-left: 6px solid #ffb906;
   display: flex;
   border-bottom: 2px solid #f3f3f3;
+  background-color: white;
 }
 .textBlock {
   height: 36.9%;
@@ -880,7 +881,7 @@ select {
 }
 .acceptDeclineButtons {
   display: flex;
-  width: 23%;
+  width: 25%;
   justify-content: space-between;
   align-items: center;
   color: white;
