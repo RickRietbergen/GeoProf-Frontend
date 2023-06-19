@@ -4,7 +4,8 @@
   gap: 2.4%;
   row-gap: 8%;
   flex-wrap: wrap;
-  max-height: 43rem;
+  max-height: 40rem;
+  width: 85.5rem;
   overflow-y: auto;
 }
 
@@ -24,9 +25,10 @@
 .deniedBlock,
 .pendingBlock {
   height: 10rem;
-  width: 21%;
+  width: 22.8%;
   border-radius: 5px;
   overflow: hidden;
+  margin-bottom: 3%;
 }
 .pendingBlock {
   border: 3px solid #eedece;
@@ -113,9 +115,11 @@
 }
 .tab-container {
   margin-top: 3%;
+  padding: 0 3%;
   display: flex;
+  padding-bottom: 4%;
   width: 33%;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .selectedButton {
