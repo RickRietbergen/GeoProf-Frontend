@@ -13,6 +13,7 @@
 -start Visual Studio Code.
 -open de repo in Visual Studio Code.
 -open de terminal.
+-voer het commando: 'npm install' uit in de terminal.
 -zorg dat je voor het runnen van de frontend applicatie in de link: 'repos\GeoProf-Frontend\GeoProfs' zit.
 -bij het opstarten van de repo, krijg je hoogst waarschijnlijk in de terminal: 'repos\GeoProf-Frontend\'. indien dit is, doe dan 'cd GeoProfs' om in het juiste mapje te komen
 -run de applicatie met de commando: 'npm run dev'.
