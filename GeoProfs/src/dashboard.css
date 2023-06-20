@@ -842,7 +842,7 @@ select {
 }
 .requestBlock {
   width: 18.9rem;
-  height: 20rem;
+  height: 19.5rem;
   background-color: #faf8f4;
   border: 3px solid #f3f3f3;
 }
@@ -932,4 +932,7 @@ select {
 }
 .daysOffInfo {
   width: 59%;
+}
+.important {
+  color: red;
 }

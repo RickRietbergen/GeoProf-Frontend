@@ -5,7 +5,6 @@
 }
 .employee_block_top,
 .dateBlock,
-.requestBlock,
 .textBlock {
   height: auto !important;
 }
@@ -38,9 +37,9 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  /* .colleague_block {
-    width: 16.45rem !important;
-  } */
+  .colleague_block {
+    width: 16.5rem !important;
+  }
 
   .smallerSidenav {
     display: none;
@@ -100,9 +99,22 @@
   .titleName {
     padding-bottom: 3%;
   }
+  .block_down {
+    width: 52.1rem !important;
+  }
 }
 
 @media only screen and (min-width: 375px) and (max-width: 425px) {
+  .componentsBlock {
+    display: flex;
+    flex-direction: column;
+    width: 83%;
+    overflow-y: auto;
+    height: 100vh;
+  }
+  .block {
+    height: 100%;
+  }
   .sidenav {
     display: none;
   }
@@ -111,7 +123,7 @@
   }
   .smallerSidenav {
     display: block;
-    width: 90px;
+    width: 73px;
   }
   .managers_blocks_number {
     font-size: 2rem;
@@ -184,8 +196,7 @@
     width: 150%;
   }
   .employee_block_top,
-  .dateBlock,
-  .requestBlock {
+  .dateBlock {
     height: auto;
   }
   .textBlock_bottom,
@@ -211,8 +222,90 @@
   }
   .block_down {
     max-height: 48rem !important;
+    width: 20rem !important;
+    justify-content: center;
   }
   .img_text {
     height: 6rem !important;
+  }
+  .managers_blocks_title {
+    font-size: 10px;
+  }
+  .nav_icons {
+    width: 100%;
+  }
+  .categoryBlock {
+    width: 95%;
+    display: flex;
+    align-items: center;
+  }
+  .requestBlocks_status {
+    max-height: 84% !important;
+  }
+
+  .daysOffComponent,
+  .statusComponent {
+    height: 65%;
+    width: 93%;
+    margin-bottom: 5%;
+  }
+  .BlockDown {
+    align-items: center;
+  }
+  .componentsBlock {
+    display: flex;
+    flex-direction: column;
+    width: 83%;
+  }
+  .inputBlock {
+    flex-direction: column;
+  }
+  .inputItem {
+    width: 17rem;
+    margin-bottom: 5%;
+  }
+  .textfield {
+    width: 80%;
+  }
+  .verlofComponent {
+    height: 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 83%;
+  }
+  .middle {
+    width: 96%;
+  }
+  .button {
+    width: 35%;
+  }
+  .sendBlock {
+    margin-top: 3%;
+    justify-content: center;
+  }
+  .Blocks {
+    flex-direction: column;
+    align-items: center;
+  }
+  .componentsBlock .Blocks {
+    height: 34rem;
+  }
+  .BlockAbove {
+    margin: 5% 0;
+  }
+  .left {
+    height: 70rem;
+  }
+  .right {
+    width: 100%;
+  }
+  .colleaguesDaysOffBlock {
+    height: 42rem;
+  }
+
+  .textBlock_bottom {
+    height: 9%;
   }
 }

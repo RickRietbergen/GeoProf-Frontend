@@ -10,7 +10,7 @@ import profilePicture from "../../../assets/profile.jpg";
 import "../../../responsiveness.css";
 import "../../../smalnav.css";
 
-const SmallerSideNav = () => {
+const SmallerSideNav = ({ value }) => {
   return (
     <div className="smallerSidenav">
       <div className="lowerBlock">
@@ -18,25 +18,21 @@ const SmallerSideNav = () => {
           <img className="profilePicture" src={profilePicture} alt="" />
         </div>
         <div className="categoryBlock">
-          <a className="active">
-            <FontAwesomeIcon
-              className="home"
-              icon={faHouse}
-              onClick={() => (window.location.href = "/dashboard")}
-            />
-          </a>
-          <a className="nav_icons">
-            <FontAwesomeIcon
-              icon={faSignal}
-              onClick={() => (window.location.href = "/status")}
-            />
-          </a>
-          <a className="nav_icons">
-            <FontAwesomeIcon
-              icon={faUserXmark}
-              onClick={() => (window.location.href = "/daysoff")}
-            />
-          </a>
+          <FontAwesomeIcon
+            icon={faHouse}
+            className={`nav_icons ${value === "dashboard" ? "active" : ""}`}
+            onClick={() => (window.location.href = "/dashboard")}
+          />
+          <FontAwesomeIcon
+            icon={faSignal}
+            className={`nav_icons ${value === "status" ? "active" : ""}`}
+            onClick={() => (window.location.href = "/status")}
+          />
+          <FontAwesomeIcon
+            icon={faUserXmark}
+            className={`nav_icons ${value === "daysoff" ? "active" : ""}`}
+            onClick={() => (window.location.href = "/daysoff")}
+          />
         </div>
         <div>
           <a className="logOut nav_icons" href="/logout">

@@ -45,20 +45,20 @@ const MessageComponent = () => {
       </div>
       <div className="managers_blocks">
         <div className="managers_blocks_title">
+          <FontAwesomeIcon icon={faEnvelope} />
+          <p>Notifications</p>
+        </div>
+        <div className="managers_blocks_number important">
+          {managerData && managerData.employeeIsSick}
+        </div>
+      </div>
+      <div className="managers_blocks">
+        <div className="managers_blocks_title">
           <FontAwesomeIcon icon={faClock} />
           <p> To Request</p>
         </div>
         <div className="managers_blocks_number">
           {managerData && managerData.verlofs}
-        </div>
-      </div>
-      <div className="managers_blocks">
-        <div className="managers_blocks_title">
-          <FontAwesomeIcon icon={faEnvelope} />
-          <p>Notifications</p>
-        </div>
-        <div className="managers_blocks_number">
-          {managerData && managerData.employeeIsSick}
         </div>
       </div>
     </div>
