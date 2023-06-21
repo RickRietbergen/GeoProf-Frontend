@@ -353,7 +353,7 @@ select {
 }
 
 .confirmed {
-  width: 80%;
+  width: 87%;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -384,7 +384,7 @@ select {
 }
 
 .pending {
-  width: 80%;
+  width: 87%;
   height: 3rem;
   display: flex;
   align-items: center;
@@ -403,7 +403,7 @@ select {
 }
 
 .denied {
-  width: 80%;
+  width: 87%;
   height: 3rem;
   display: flex;
   align-items: center;
