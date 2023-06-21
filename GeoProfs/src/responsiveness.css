@@ -112,6 +112,11 @@
     overflow-y: auto;
     height: 100vh;
   }
+  .denied,
+  .confirmed,
+  .pending {
+    width: 87%;
+  }
   .block {
     height: 100%;
   }
@@ -307,5 +312,11 @@
 
   .textBlock_bottom {
     height: 9%;
+  }
+  .confirmedButton,
+  .deniedButton,
+  .pendingButton {
+    font-size: 10px;
+    width: 26%;
   }
 }
