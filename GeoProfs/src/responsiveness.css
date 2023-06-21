@@ -34,11 +34,24 @@
   .daysOffInfo {
     width: 61%;
   }
+  .pending,
+  .denied,
+  .confirmed {
+    width: 87%;
+  }
+  .confirmedButton,
+  .deniedButton,
+  .pendingButton {
+    width: 29%;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
   .colleague_block {
     width: 16.5rem !important;
+  }
+  .colleaguesDaysOffBlock {
+    height: 48.6rem;
   }
 
   .smallerSidenav {
@@ -83,13 +96,7 @@
   .img_text {
     height: 5rem;
   }
-  .day {
-    font-size: 1.9rem;
-  }
-  .beginMonth,
-  .endMonth {
-    font-size: 1.3rem;
-  }
+
   .dateBlock {
     padding: 1% 0;
   }
@@ -101,6 +108,29 @@
   }
   .block_down {
     width: 52.1rem !important;
+  }
+  .confirmedBlock,
+  .deniedBlock,
+  .pendingBlock {
+    width: 22.5% !important;
+  }
+  .confirmedButton,
+  .deniedButton,
+  .pendingButton {
+    font-size: 10px;
+    width: 29%;
+  }
+  .tab-container {
+    width: 49% !important;
+  }
+  .textfield {
+    min-height: 14.4rem;
+    width: 93%;
+  }
+  .pending,
+  .denied,
+  .confirmed {
+    width: 87%;
   }
 }
 
