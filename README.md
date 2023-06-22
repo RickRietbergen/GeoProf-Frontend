@@ -1,3 +1,4 @@
+# Volg deze stappen om de GeoProfs applicatie te runnen.
 # GeoProf-Backend
 -start Microsoft SQL Server Management Studio op.
 -druk op connect.
@@ -18,3 +19,5 @@
 -bij het opstarten van de repo, krijg je hoogst waarschijnlijk in de terminal: 'repos\GeoProf-Frontend\'. indien dit is, doe dan 'cd GeoProfs' om in het juiste mapje te komen
 -run de applicatie met de commando: 'npm run dev'.
 -nu kom je op de inlogscherm.
+
+# In de trello staat alle documentatie(waaronder waaronder de Testrapporten, Reflecties) hierin hebben we alles duidelijk benoemd en genoteerd, zodat dit duidelijk en overzichtelijk is voor de productowner.
