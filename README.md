@@ -21,3 +21,4 @@
 -nu kom je op de inlogscherm.
 
 # In de trello staat alle documentatie(waaronder waaronder de Testrapporten, Reflecties) hierin hebben we alles duidelijk benoemd en genoteerd, zodat dit duidelijk en overzichtelijk is voor de productowner.
+# Wij hebben 2 repo's, die door een API call samen met elkaar worden verbonden.
