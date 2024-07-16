@@ -20,11 +20,19 @@ const VerlofComponent = () => {
   const [Until, setUntilDate] = useState("");
   const [Beschrijving, setBeschrijving] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(false);
+  const [minUntilDate, setMinUntilDate] = useState(
+    minDate.toISOString().split("T")[0]
+  );
 
   //wijs data toe aan var, meesturen in POST request.
   const handleFromDateChange = (event) => {
     const From = event.target.value;
     setFromDate(From);
+    setMinUntilDate(From);
+
+    if (Until && Until < From) {
+      setUntilDate(From);
+    }
   };
 
   const handleReasonChange = (event) => {
@@ -115,7 +123,7 @@ const VerlofComponent = () => {
           <p className="request_option">End Date</p>
           <input
             type="date"
-            min={minDate.toISOString().split("T")[0]}
+            min={minUntilDate}
             value={Until}
             onChange={handleUntilDateChange}
           />
